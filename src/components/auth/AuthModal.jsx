@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { useCurrency } from '../../context/CurrencyContext';
 export default function AuthModal() {
   const {
     isAuthModalOpen,
@@ -26,7 +27,13 @@ export default function AuthModal() {
     signUp
   } = useAuth();
   const navigate = useNavigate();
+  const { currency, setCurrency } = useCurrency();
 
+  // India → ₹ INR (Cashfree). Everywhere else → £ GBP (PayPal).
+  const applyCurrencyFor = (user) => {
+    if (!user || user.role === 'admin') return;
+    setCurrency(user.country === 'India' ? 'INR' : 'GBP');
+  };
   const [activeTab, setActiveTab] = useState(authModalMode || 'signin');
   const [isAdminMode, setIsAdminMode] = useState(authModalMode === 'admin');
   const [error, setError] = useState('');
@@ -40,17 +47,17 @@ export default function AuthModal() {
 
   // Register fields
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('+44 7552 237997');
+  const [phone, setPhone] = useState('');
   const [organization, setOrganization] = useState('');
-  const [country, setCountry] = useState('United Kingdom');
-
+  const [country, setCountry] = useState(currency === 'INR' ? 'India' : 'United Kingdom');
   useEffect(() => {
     setActiveTab(authModalMode === 'admin' ? 'signin' : (authModalMode || 'signin'));
     setIsAdminMode(authModalMode === 'admin');
     setError('');
     setSuccess('');
+    if (isAuthModalOpen) setCountry(currency === 'INR' ? 'India' : 'United Kingdom');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authModalMode, isAuthModalOpen]);
-
   if (!isAuthModalOpen) return null;
 
   const handleSignInSubmit = async (e) => {
@@ -72,7 +79,7 @@ export default function AuthModal() {
     } else {
       setSuccess(`Signed in successfully as ${res.user.name}`);
       if (isAdminMode) navigate('/admin/dashboard');
-    }
+      else applyCurrencyFor(res.user);    }
   };
   const handleSignUpSubmit = (e) => {
     e.preventDefault();
@@ -92,6 +99,7 @@ export default function AuthModal() {
       setError(res.error);
     } else {
       setSuccess(`Account created! Welcome to ReTRRAC, ${res.user.name}`);
+      applyCurrencyFor(res.user);
     }
   };
 
@@ -328,7 +336,7 @@ export default function AuthModal() {
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+44 7552 237997"
+                    placeholder={country === 'India' ? '98765 43210' : '+44 7700 900123'}
                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   />
                 </div>
