@@ -71,10 +71,10 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
   };
 
   const navLinkClass = ({ isActive }) => 
-    `px-3 py-2 text-xs xl:text-sm font-semibold rounded-lg transition-colors ${
+    `whitespace-nowrap px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold rounded-lg transition-colors ${
       isActive 
-        ? 'text-indigo-600 bg-purple-50/70 font-bold' 
-        : 'text-slate-600 hover:text-indigo-600 hover:bg-slate-50'
+        ? 'text-brand-600 bg-brand-50/70 font-bold' 
+        : 'text-slate-600 hover:text-brand-600 hover:bg-slate-50'
     }`;
 
   return (
@@ -83,7 +83,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
     }`}>
       
       {/* Top UK Institutional Announcement Bar */}
-      <div className="bg-gradient-to-r from-slate-950 via-indigo-950 to-slate-900 text-white text-[11px] py-1.5 px-4 border-b border-indigo-900/30 font-sans">
+      <div className="bg-gradient-to-r from-slate-950 via-brand-950 to-slate-900 text-white text-[11px] py-1.5 px-4 border-b border-brand-900/30 font-sans">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5">
           <div className="flex items-center space-x-2">
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -108,17 +108,17 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
             {/* Subtle Deanery Admin Portal Gateway */}
             <button
               onClick={() => openAuthModal('admin')}
-              className="text-slate-400 hover:text-purple-300 transition-colors flex items-center space-x-1 font-medium"
+              className="text-slate-400 hover:text-brand-300 transition-colors flex items-center space-x-1 font-medium"
               title="Authorized London Deanery Administration Portal"
             >
-              <Lock className="w-3 h-3 text-purple-400" />
+              <Lock className="w-3 h-3 text-brand-400" />
               <span>Deanery Staff</span>
             </button>
 
             <span className="text-slate-600 hidden sm:inline">|</span>
 
             <a href="tel:+447552237997" className="hover:text-cyan-300 transition-colors hidden sm:flex items-center space-x-1">
-              <Phone className="w-3 h-3 text-purple-400" />
+              <Phone className="w-3 h-3 text-brand-400" />
               <span>+44 7552 237 997</span>
             </a>
 
@@ -128,14 +128,14 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
             <div className="flex items-center bg-white/10 rounded-lg p-0.5 border border-white/20 text-[10px] font-bold">
               <button
                 onClick={() => setCurrency('GBP')}
-                className={`px-2 py-0.5 rounded transition-all ${currency === 'GBP' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-300 hover:text-white'}`}
+                className={`px-2 py-0.5 rounded transition-all ${currency === 'GBP' ? 'bg-brand-600 text-white shadow-sm' : 'text-slate-300 hover:text-white'}`}
                 title="Display fees in British Pounds (£)"
               >
                 🇬🇧 GBP (£)
               </button>
               <button
                 onClick={() => setCurrency('INR')}
-                className={`px-2 py-0.5 rounded transition-all ${currency === 'INR' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-300 hover:text-white'}`}
+                className={`px-2 py-0.5 rounded transition-all ${currency === 'INR' ? 'bg-brand-600 text-white shadow-sm' : 'text-slate-300 hover:text-white'}`}
                 title="Display fees in Indian Rupees (₹)"
               >
                 🇮🇳 INR (₹)
@@ -148,7 +148,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
       {/* Main Glass Navigation Bar */}
       <nav className={`transition-all duration-300 font-sans ${
         isScrolled 
-          ? 'bg-white/90 backdrop-blur-xl py-2.5 shadow-lg shadow-indigo-950/5 border-b border-slate-100' 
+          ? 'bg-white/90 backdrop-blur-xl py-2.5 shadow-lg shadow-brand-950/5 border-b border-slate-100' 
           : 'bg-white/95 backdrop-blur-md py-3 border-b border-slate-100'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -156,15 +156,15 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
             
             {/* Logo */}
             {/* Logo */}
-            <Link to="/" className="flex items-center group">
+            <Link to="/" className="flex items-center group shrink-0 mr-2">
               <img
                 src="/Headerlogo.png"
                 alt="ReTRRAC Global"
-                className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+                className="h-9 xl:h-11 w-auto object-contain group-hover:scale-105 transition-transform"
               />
             </Link>
             {/* Desktop Navigation Links */}
-            <div className="hidden lg:flex items-center space-x-1 xl:space-x-1.5">
+            <div className="hidden xl:flex items-center space-x-1 xl:space-x-1.5">
               
               <NavLink to="/our-story" className={navLinkClass}>
                 Our Story
@@ -189,7 +189,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                 {sectorsDropdown && (
                   <div className="absolute top-full left-0 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 mt-1 animate-fadeIn z-50">
                     <div className="p-2 border-b border-slate-100">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-purple-700">Regulated Practice Areas</p>
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-brand-700">Regulated Practice Areas</p>
                     </div>
                     <div className="space-y-1 mt-1">
                       {consultingSectors.map((sector) => {
@@ -201,11 +201,11 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                             onClick={() => setSectorsDropdown(false)}
                             className="flex items-center space-x-3 p-2 rounded-xl hover:bg-slate-50 transition-colors group"
                           >
-                            <div className="w-8 h-8 rounded-lg bg-purple-50 group-hover:bg-purple-100 flex items-center justify-center text-purple-700 shrink-0">
+                            <div className="w-8 h-8 rounded-lg bg-brand-50 group-hover:bg-brand-100 flex items-center justify-center text-brand-700 shrink-0">
                               <Icon className="w-4 h-4" />
                             </div>
                             <div>
-                              <p className="text-xs font-bold text-slate-800 group-hover:text-indigo-600 transition-colors">
+                              <p className="text-xs font-bold text-slate-800 group-hover:text-brand-600 transition-colors">
                                 {sector.title}
                               </p>
                               <p className="text-[11px] text-slate-500 line-clamp-1">{sector.tagline}</p>
@@ -237,8 +237,8 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                 {academyDropdown && (
                   <div className="absolute top-full left-0 w-88 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 mt-1 animate-fadeIn z-50 space-y-2">
                     <div className="p-2 border-b border-slate-100 flex items-center justify-between">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-purple-700">CPD Accredited Programs</p>
-                      <span className="text-[10px] bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full font-bold">PayPal Ready</span>
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-brand-700">CPD Accredited Programs</p>
+                      <span className="text-[10px] bg-brand-100 text-brand-800 px-2 py-0.5 rounded-full font-bold">PayPal Ready</span>
                     </div>
 
                     <Link
@@ -260,7 +260,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-bold text-slate-900">Blackthrone™ Simulation</span>
-                        <span className="text-[10px] text-purple-700 font-bold bg-purple-50 px-2 py-0.5 rounded-full">30h Lab</span>
+                        <span className="text-[10px] text-brand-700 font-bold bg-brand-50 px-2 py-0.5 rounded-full">30h Lab</span>
                       </div>
                       <p className="text-[11px] text-slate-500 mt-0.5">Live Scenario Sanctions & SARs War Room</p>
                     </Link>
@@ -284,7 +284,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-bold text-slate-900">Firm-Wide Risk Assessment (FWRA)</span>
-                        <span className="text-[10px] text-indigo-700 font-bold bg-indigo-50 px-2 py-0.5 rounded-full">20h Gatekeeper</span>
+                        <span className="text-[10px] text-brand-700 font-bold bg-brand-50 px-2 py-0.5 rounded-full">20h Gatekeeper</span>
                       </div>
                       <p className="text-[11px] text-slate-500 mt-0.5">UK MLR 2017 Regulation 18/19 Audit Compliance</p>
                     </Link>
@@ -293,7 +293,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                       <Link
                         to="/retrrac-academy"
                         onClick={() => setAcademyDropdown(false)}
-                        className="text-xs font-bold text-indigo-600 hover:underline"
+                        className="text-xs font-bold text-brand-600 hover:underline"
                       >
                         All Academy Courses →
                       </Link>
@@ -301,7 +301,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                       <Link
                         to="/track-booking"
                         onClick={() => setAcademyDropdown(false)}
-                        className="text-xs font-bold text-purple-700 hover:underline flex items-center"
+                        className="text-xs font-bold text-brand-700 hover:underline flex items-center"
                       >
                         <FileCheck2 className="w-3 h-3 mr-1" />
                         <span>Track Booking</span>
@@ -326,7 +326,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
             </div>
 
             {/* Cart, Wishlist, Portals & CTAs */}
-            <div className="hidden md:flex items-center space-x-2 xl:space-x-2.5">
+            <div className="hidden md:flex items-center space-x-2 xl:space-x-2.5 whitespace-nowrap">
               
               {/* Wishlist Button with Badge */}
               <button
@@ -348,10 +348,10 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                 className="relative flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition-colors"
                 title="View Basket / Cart"
               >
-                <ShoppingBag className="w-4 h-4 text-indigo-600" />
-                <span>Basket</span>
+                <ShoppingBag className="w-4 h-4 text-brand-600" />
+                <span className="hidden 2xl:inline">Basket</span>
                 {cartCount > 0 && (
-                  <span className="w-4 h-4 rounded-full bg-indigo-600 text-white font-black text-[10px] flex items-center justify-center animate-scale-up">
+                  <span className="w-4 h-4 rounded-full bg-brand-600 text-white font-black text-[10px] flex items-center justify-center animate-scale-up">
                     {cartCount}
                   </span>
                 )}
@@ -362,15 +362,15 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                 <div className="flex items-center space-x-1.5">
                   <button
                     onClick={() => openAuthModal('signin')}
-                    className="flex items-center space-x-1 px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-indigo-600 hover:bg-slate-50 transition-colors"
+                    className="flex items-center space-x-1 px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-brand-600 hover:bg-slate-50 transition-colors"
                   >
-                    <User className="w-3.5 h-3.5 text-indigo-600" />
+                    <User className="w-3.5 h-3.5 text-brand-600" />
                     <span>Sign In</span>
                   </button>
 
                   <button
                     onClick={() => openAuthModal('signup')}
-                    className="flex items-center space-x-1 px-3 py-2 rounded-xl text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 transition-colors border border-indigo-200/80 shadow-sm"
+                    className="flex items-center space-x-1 px-3 py-2 rounded-xl text-xs font-bold text-brand-700 bg-brand-50 hover:bg-brand-100 transition-colors border border-brand-200/80 shadow-sm"
                   >
                     <span>Register</span>
                   </button>
@@ -380,10 +380,10 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                   {/* Candidate Portal */}
                   <Link
                     to="/user/dashboard"
-                    className="flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-indigo-600 hover:bg-slate-50 transition-colors border border-slate-200/80"
+                    className="flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-brand-600 hover:bg-slate-50 transition-colors border border-slate-200/80"
                     title={`Signed in as ${currentUser.name}`}
                   >
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[10px] flex items-center justify-center font-bold">
+                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-brand-500 to-brand-700 text-white text-[10px] flex items-center justify-center font-bold">
                       {currentUser.name ? currentUser.name[0] : 'U'}
                     </div>
                     <span className="max-w-[85px] xl:max-w-[110px] truncate">{currentUser.name?.split(' ')[0] || 'Portal'}</span>
@@ -393,10 +393,10 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                   {currentUser.role === 'admin' && (
                     <Link
                       to="/admin/dashboard"
-                      className="flex items-center space-x-1 px-2.5 py-2 rounded-xl text-xs font-bold text-purple-900 bg-purple-50 hover:bg-purple-100 transition-colors border border-purple-200/80"
+                      className="flex items-center space-x-1 px-2.5 py-2 rounded-xl text-xs font-bold text-brand-900 bg-brand-50 hover:bg-brand-100 transition-colors border border-brand-200/80"
                       title="Admin Management Command"
                     >
-                      <LayoutDashboard className="w-3.5 h-3.5 text-purple-600" />
+                      <LayoutDashboard className="w-3.5 h-3.5 text-brand-600" />
                       <span>Admin</span>
                     </Link>
                   )}
@@ -415,33 +415,33 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
               {/* AI Copilot Quick Button */}
               <button
                 onClick={onOpenCopilot}
-                className="flex items-center space-x-1 px-3 py-2 rounded-xl text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-200/80 hover:bg-indigo-100 transition-all shadow-sm"
+                className="flex items-center space-x-1 px-3 py-2 rounded-xl text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200/80 hover:bg-brand-100 transition-all shadow-sm"
                 title="Chat with ReTRRAC AI Copilot"
               >
-                <Sparkles className="w-3.5 h-3.5 text-indigo-600 animate-pulse" />
-                <span className="hidden xl:inline">AI Copilot</span>
+                <Sparkles className="w-3.5 h-3.5 text-brand-600 animate-pulse" />
+                <span className="hidden 2xl:inline">AI Copilot</span>
               </button>
 
               {/* Risk Scanner CTA */}
               <button
                 onClick={onOpenRiskScanner}
-                className="flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-white bg-gradient-tech hover:opacity-95 shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/30 transition-all transform hover:-translate-y-0.5"
+                className="flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-white bg-gradient-tech hover:opacity-95 shadow-md shadow-brand-500/20 hover:shadow-brand-500/30 transition-all transform hover:-translate-y-0.5"
               >
                 <Zap className="w-3.5 h-3.5 text-cyan-200" />
-                <span>AI Audit</span>
+                <span className="hidden xl:inline">AI Audit</span>
               </button>
 
             </div>
 
             {/* Mobile Menu & Quick Cart Buttons */}
-            <div className="lg:hidden flex items-center space-x-2">
+            <div className="xl:hidden flex items-center space-x-2 ml-2">
               <button
                 onClick={openCart}
-                className="relative p-2 rounded-lg bg-slate-100 text-slate-800"
+                className="md:hidden relative p-2 rounded-lg bg-slate-100 text-slate-800"
               >
-                <ShoppingBag className="w-4 h-4 text-indigo-600" />
+                <ShoppingBag className="w-4 h-4 text-brand-600" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-indigo-600 text-white font-bold text-[9px] flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-brand-600 text-white font-bold text-[9px] flex items-center justify-center">
                     {cartCount}
                   </span>
                 )}
@@ -449,14 +449,14 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
 
               <button
                 onClick={() => setCurrency(currency === 'GBP' ? 'INR' : 'GBP')}
-                className="px-2 py-1 text-[11px] font-bold bg-slate-100 rounded-lg text-slate-800"
+                className="md:hidden px-2 py-1 text-[11px] font-bold bg-slate-100 rounded-lg text-slate-800"
               >
                 {currency === 'GBP' ? '🇬🇧 £' : '🇮🇳 ₹'}
               </button>
               
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-slate-700 hover:text-indigo-600 rounded-lg hover:bg-slate-100"
+                className="p-2 text-slate-700 hover:text-brand-600 rounded-lg hover:bg-slate-100"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -468,7 +468,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-4 pb-6 space-y-2 animate-fadeIn max-h-[85vh] overflow-y-auto shadow-2xl">
+        <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-4 pb-6 space-y-2 animate-fadeIn max-h-[85vh] overflow-y-auto shadow-2xl">
           <div className="flex justify-between items-center pb-2.5 border-b border-slate-100">
             <span className="text-[11px] font-bold text-slate-500 uppercase">
               {currentUser ? `Hi, ${currentUser.name.split(' ')[0]}` : 'Candidate Access'}
@@ -479,7 +479,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                   setMobileMenuOpen(false);
                   openCart();
                 }}
-                className="px-2.5 py-1 rounded-lg bg-indigo-100 text-indigo-800 font-bold text-xs"
+                className="px-2.5 py-1 rounded-lg bg-brand-100 text-brand-800 font-bold text-xs"
               >
                 Basket ({cartCount})
               </button>
@@ -500,7 +500,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                       setMobileMenuOpen(false);
                       openAuthModal('signup');
                     }}
-                    className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-bold text-xs border border-indigo-200"
+                    className="px-2.5 py-1 rounded-lg bg-brand-50 text-brand-700 font-bold text-xs border border-brand-200"
                   >
                     Register
                   </button>
@@ -510,7 +510,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                   <Link
                     to="/user/dashboard"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-bold text-xs"
+                    className="px-2.5 py-1 rounded-lg bg-brand-50 text-brand-700 font-bold text-xs"
                   >
                     My Portal
                   </Link>
@@ -518,7 +518,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                     <Link
                       to="/admin/dashboard"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="px-2.5 py-1 rounded-lg bg-purple-900 text-white font-bold text-xs"
+                      className="px-2.5 py-1 rounded-lg bg-brand-900 text-white font-bold text-xs"
                     >
                       Admin
                     </Link>
@@ -548,14 +548,14 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
           <Link
             to="/retrrac-academy"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 rounded-lg font-bold text-indigo-600"
+            className="block px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 rounded-lg font-bold text-brand-600"
           >
             ReTRRAC® Academy (All Courses)
           </Link>
           <Link
             to="/track-booking"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 text-sm font-semibold text-purple-700 hover:bg-purple-50 rounded-lg"
+            className="block px-3 py-2 text-sm font-semibold text-brand-700 hover:bg-brand-50 rounded-lg"
           >
             Track Course Enrolment Status
           </Link>
@@ -601,9 +601,9 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                 setMobileMenuOpen(false);
                 onOpenCopilot();
               }}
-              className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-xl text-xs font-bold text-purple-700 bg-purple-50 border border-purple-200"
+              className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-xl text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200"
             >
-              <Sparkles className="w-4 h-4 text-purple-600" />
+              <Sparkles className="w-4 h-4 text-brand-600" />
               <span>Ask ReTRRAC AI Copilot</span>
             </button>
             <button

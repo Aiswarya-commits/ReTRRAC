@@ -64,7 +64,7 @@ export default function App() {
           <BookingProvider>
             <Router>
               <ScrollToTop />
-              <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans selection:bg-purple-500 selection:text-white relative">
+              <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans selection:bg-brand-500 selection:text-white relative">
 
                 <Navbar onOpenRiskScanner={openScanner} onOpenCopilot={openCopilot} />
 
@@ -116,7 +116,7 @@ export default function App() {
                 <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end space-y-2">
                   <button
                     onClick={openCopilot}
-                    className="group flex items-center space-x-2 px-4 py-3 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 text-white font-bold text-xs shadow-2xl shadow-purple-500/30 hover:scale-105 transition-all border border-white/20"
+                    className="group flex items-center space-x-2 px-4 py-3 rounded-full bg-gradient-tech text-white font-bold text-xs shadow-2xl shadow-brand-600/30 hover:scale-105 transition-all border border-white/20"
                     title="Chat with ReTRRAC AI Copilot"
                   >
                     <Sparkles className="w-4 h-4 text-cyan-200 animate-spin" />

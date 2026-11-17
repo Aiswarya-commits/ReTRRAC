@@ -18,7 +18,7 @@ export function TeamPhoto({ member, className = '' }) {
 
   if (failed) {
     return (
-      <div className={`flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800 ${className}`}>
+      <div className={`flex items-center justify-center bg-gradient-to-br from-brand-500 via-brand-600 to-brand-800 ${className}`}>
         <span className="text-white/90 font-black tracking-tight text-4xl">{initials(member.name)}</span>
       </div>
     );
@@ -40,13 +40,13 @@ export default function TeamMemberCard({ member, onOpen }) {
     <button
       type="button"
       onClick={() => onOpen(member)}
-      className="group text-left w-full bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-purple-500/10 hover:border-purple-300 transition-all duration-300 flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+      className="group text-left w-full bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-brand-500/10 hover:border-brand-300 transition-all duration-300 flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
     >
       <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
         <TeamPhoto member={member} className="w-full h-full group-hover:scale-105 transition-transform duration-500" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/10 to-transparent" />
 
-        <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/90 text-purple-900 backdrop-blur-md">
+        <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/90 text-brand-900 backdrop-blur-md">
           {member.department}
         </span>
 
@@ -58,10 +58,10 @@ export default function TeamMemberCard({ member, onOpen }) {
 
       <div className="p-5 flex items-center justify-between text-xs">
         <span className="flex items-center text-slate-500">
-          <MapPin className="w-3.5 h-3.5 mr-1 text-purple-500" />
+          <MapPin className="w-3.5 h-3.5 mr-1 text-brand-500" />
           {member.location}
         </span>
-        <span className="flex items-center font-bold text-indigo-600 group-hover:text-indigo-800">
+        <span className="flex items-center font-bold text-brand-600 group-hover:text-brand-800">
           View profile
           <ChevronRight className="w-3.5 h-3.5 ml-0.5 group-hover:translate-x-0.5 transition-transform" />
         </span>
@@ -108,17 +108,17 @@ export function TeamProfileModal({ member, onClose }) {
 
         <div className="md:col-span-3 p-6 sm:p-8 overflow-y-auto space-y-4">
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700">{member.department}</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-brand-700">{member.department}</span>
             <h3 className="text-2xl font-black text-slate-900 leading-tight">{member.name}</h3>
-            <p className="text-sm font-semibold text-indigo-600">{member.role}</p>
+            <p className="text-sm font-semibold text-brand-600">{member.role}</p>
             <p className="text-xs text-slate-500 flex items-center mt-1">
               <MapPin className="w-3.5 h-3.5 mr-1" /> {member.location}
             </p>
           </div>
 
           {member.credentials && (
-            <div className="p-3 rounded-xl bg-purple-50/80 border border-purple-100 text-xs text-purple-950 font-semibold flex items-center">
-              <Award className="w-4 h-4 mr-2 text-purple-600 shrink-0" />
+            <div className="p-3 rounded-xl bg-brand-50/80 border border-brand-100 text-xs text-brand-950 font-semibold flex items-center">
+              <Award className="w-4 h-4 mr-2 text-brand-600 shrink-0" />
               {member.credentials}
             </div>
           )}
@@ -148,7 +148,7 @@ export function TeamProfileModal({ member, onClose }) {
               </a>
             )}
             {member.linkedin && (
-              <a href={member.linkedin} target="_blank" rel="noreferrer" className="px-3.5 py-2 rounded-xl bg-indigo-50 text-indigo-700 font-bold flex items-center hover:bg-indigo-100">
+              <a href={member.linkedin} target="_blank" rel="noreferrer" className="px-3.5 py-2 rounded-xl bg-brand-50 text-brand-700 font-bold flex items-center hover:bg-brand-100">
                 <Linkedin className="w-3.5 h-3.5 mr-1.5" /> LinkedIn
               </a>
             )}

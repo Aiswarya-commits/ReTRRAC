@@ -20,7 +20,6 @@ const GUR = '/Gurpreet.jpg';
 const ARUN = '/Arun.jpg';
 const PIC1 = '/pic1.jpg';
 const PIC2 = '/pic2.jpg';
-const SARITHA = '/pic3.jpg'; 
 const [ren, sarah, ahmed] = leadershipTeam;
 
 export const teamDepartments = [
@@ -96,7 +95,7 @@ export const teamMembers = [
   },
   {
     id: 'member-clm-lead',
-    name: 'DaliYa Davis',
+    name: 'Daliya Davis',
     role: 'CLM RegTech Product Lead',
     department: 'Technology',
     location: 'Pune, India',
@@ -159,19 +158,6 @@ export const teamMembers = [
     expertise: ['Client Success', 'Project Coordination'],
     placeholder: true
   },
-  {
-    id: 'member-operations-2',
-    name: 'Saritha',
-    role: 'Client Operations Manager',
-    department: 'Operations',
-    location: 'London, UK',
-    image: SARITHA,
-    credentials: 'Add credentials',
-    bio: 'First point of contact for clients and candidates – scheduling consultations, enrolment support and project coordination across our offices.',
-    email: 'info@retrrac.org',
-    expertise: ['Client Success', 'Project Coordination'],
-    placeholder: true
-  }
 ];
 
 export const featuredTeam = teamMembers.filter((m) => m.featured).slice(0, 3);

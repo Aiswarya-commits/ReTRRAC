@@ -10,19 +10,19 @@
 
 /* Custom Gradients and Glows */
 .text-gradient {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #06b6d4 100%);
+  background: linear-gradient(135deg, #1f9ff6 0%, #1f82df 45%, #1f6acb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-purple {
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #1f82df 0%, #1f6acb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .bg-gradient-tech {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 40%, #2563eb 80%, #06b6d4 100%);
+  background: linear-gradient(135deg, #1f9ff6 0%, #1f82df 50%, #1f6acb 100%);
 }
 
 .bg-gradient-subtle {
@@ -40,12 +40,12 @@
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(31, 130, 223, 0.08);
 }
 
 .glass-card:hover {
-  border-color: rgba(139, 92, 246, 0.35);
-  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.18);
+  border-color: rgba(31, 159, 246, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(31, 130, 223, 0.18);
 }
 
 .glow-orb {
@@ -141,16 +141,16 @@
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(196, 181, 253, 0.6);
-  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.12), 0 0 15px rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(131, 197, 250, 0.6);
+  box-shadow: 0 10px 25px -5px rgba(31, 106, 203, 0.12), 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
 .floating-pill-dark {
   background: rgba(15, 23, 42, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(139, 92, 246, 0.4);
-  box-shadow: 0 10px 30px -5px rgba(124, 58, 237, 0.25);
+  border: 1px solid rgba(31, 159, 246, 0.4);
+  box-shadow: 0 10px 30px -5px rgba(31, 106, 203, 0.25);
 }
 
 /* Shimmer Button */
@@ -173,10 +173,37 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c4b5fd;
+  background: #83c5fa;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8b5cf6;
+  background: #1f82df;
+}
+
+/* Continuous "running" rows (client bar, team photos) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee 60s linear infinite;
+}
+
+/* Soft fade at both edges of a running row */
+.marquee-fade {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-slow {
+    animation: none;
+  }
 }
