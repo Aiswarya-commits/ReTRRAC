@@ -29,7 +29,7 @@ export function TeamPhoto({ member, className = '' }) {
       alt={`${member.name}, ${member.role}`}
       loading="lazy"
       onError={() => setFailed(true)}
-      className={`object-cover ${className}`}
+      className={`object-cover object-top ${className}`}
     />
   );
 }
@@ -42,21 +42,21 @@ export default function TeamMemberCard({ member, onOpen }) {
       onClick={() => onOpen(member)}
       className="group text-left w-full bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-brand-500/10 hover:border-brand-300 transition-all duration-300 flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
     >
+      {/* Photo is shown on its own – the name sits below it so faces are never covered */}
       <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
         <TeamPhoto member={member} className="w-full h-full group-hover:scale-105 transition-transform duration-500" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/10 to-transparent" />
 
-        <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/90 text-brand-900 backdrop-blur-md">
+        <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/90 text-brand-900 backdrop-blur-md shadow-sm">
           {member.department}
         </span>
-
-        <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-          <h3 className="text-lg font-black leading-tight">{member.name}</h3>
-          <p className="text-xs text-cyan-200 font-semibold mt-0.5">{member.role}</p>
-        </div>
       </div>
 
-      <div className="p-5 flex items-center justify-between text-xs">
+      <div className="px-5 pt-4">
+        <h3 className="text-base font-black text-ink leading-tight">{member.name}</h3>
+        <p className="text-xs text-brand-600 font-semibold mt-1 line-clamp-2 min-h-[2rem]">{member.role}</p>
+      </div>
+
+      <div className="px-5 pb-5 pt-3 mt-auto flex items-center justify-between text-xs border-t border-slate-100">
         <span className="flex items-center text-slate-500">
           <MapPin className="w-3.5 h-3.5 mr-1 text-brand-500" />
           {member.location}
@@ -91,25 +91,27 @@ export function TeamProfileModal({ member, onClose }) {
         aria-modal="true"
         aria-label={`${member.name} profile`}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-5 max-h-[90vh]"
+        className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-y-auto md:overflow-hidden grid grid-cols-1 md:grid-cols-5 max-h-[90vh]"
       >
         <button
           onClick={onClose}
           aria-label="Close profile"
-          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-md"
+          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-slate-900/60 hover:bg-slate-900/80 text-white backdrop-blur-md"
         >
           <X className="w-4 h-4" />
         </button>
 
-        <div className="md:col-span-2 relative h-64 md:h-auto bg-slate-100">
-          <TeamPhoto member={member} className="absolute inset-0 w-full h-full" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent md:hidden" />
+        {/* Photo column – fixed portrait shape, never cut by the write-up */}
+        <div className="md:col-span-2 bg-gradient-to-br from-brand-50 via-white to-accent-50 p-5 sm:p-6 flex items-start justify-center">
+          <div className="w-full max-w-[280px] md:max-w-none aspect-[4/5] rounded-2xl overflow-hidden bg-slate-100 shadow-lg shadow-brand-900/10 border-4 border-white">
+            <TeamPhoto member={member} className="w-full h-full" />
+          </div>
         </div>
 
-        <div className="md:col-span-3 p-6 sm:p-8 overflow-y-auto space-y-4">
+        <div className="md:col-span-3 p-6 sm:p-8 md:overflow-y-auto md:max-h-[90vh] space-y-4">
           <div>
             <span className="text-[10px] font-bold uppercase tracking-wider text-brand-700">{member.department}</span>
-            <h3 className="text-2xl font-black text-slate-900 leading-tight">{member.name}</h3>
+            <h3 className="text-2xl font-black text-ink leading-tight pr-8">{member.name}</h3>
             <p className="text-sm font-semibold text-brand-600">{member.role}</p>
             <p className="text-xs text-slate-500 flex items-center mt-1">
               <MapPin className="w-3.5 h-3.5 mr-1" /> {member.location}
@@ -138,7 +140,7 @@ export function TeamProfileModal({ member, onClose }) {
 
           <div className="pt-3 border-t border-slate-100 flex flex-wrap gap-2 text-xs">
             {member.email && (
-              <a href={`mailto:${member.email}`} className="px-3.5 py-2 rounded-xl bg-slate-900 text-white font-bold flex items-center hover:bg-slate-800">
+              <a href={`mailto:${member.email}`} className="px-3.5 py-2 rounded-xl bg-brand-600 text-white font-bold flex items-center hover:bg-brand-700">
                 <Mail className="w-3.5 h-3.5 mr-1.5" /> Email
               </a>
             )}

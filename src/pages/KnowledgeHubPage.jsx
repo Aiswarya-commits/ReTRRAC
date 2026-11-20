@@ -14,7 +14,7 @@ import {
   ChevronLeft,
   ChevronRight
 } from 'lucide-react';
-import FloatingElements from '../components/common/FloatingElements';
+import PageBanner from '../components/common/PageBanner';
 import { knowledgeHubArticles } from '../data/knowledgeHubData';
 
 export default function KnowledgeHubPage({ onOpenCopilot }) {
@@ -78,31 +78,15 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
   return (
     <div className="bg-white pt-24 pb-24 overflow-hidden">
       
-      {/* 1. HERO BANNER WITH VIBRANT FLOATING PURPLE/WHITE PARTICLES */}
-      <div className="relative py-24 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 text-white overflow-hidden">
-        <div className="glow-orb w-96 h-96 -top-20 -left-20 bg-purple-500/20" />
-        <div className="glow-orb w-96 h-96 -bottom-20 -right-20 bg-indigo-500/20" />
+      {/* Banner – same light, logo-coloured style as every other page */}
+      <PageBanner
+        title="Knowledge Hub"
+        highlight="Hub"
+        subtitle="Stay informed on international AML fines, regulatory strategy roadmaps, supervisory precedents, and compliance advisories."
+        image="/hero-building.jpg"
+      />
 
-        {/* Ambient floating purple & white particles */}
-        <FloatingElements count={8} theme="dark" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full floating-pill-dark text-cyan-300 text-xs font-bold uppercase tracking-wider animate-float-medium">
-            <BookOpen className="w-3.5 h-3.5 text-purple-400" />
-            <span>Global Regulatory Intelligence</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
-            Knowledge Hub
-          </h1>
-
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto">
-            Stay informed on international AML fines, regulatory strategy roadmaps, supervisory precedents, and compliance advisories.
-          </p>
-        </div>
-      </div>
-
-      <div ref={gridTopRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14">
+      <div ref={gridTopRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         
         {/* 2. SEARCH & CATEGORY FILTER BAR */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-12">
@@ -115,7 +99,7 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-2xl text-xs font-bold transition-all duration-200 ${
                   selectedCategory === cat
-                    ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-500/20 scale-[1.02]'
+                    ? 'bg-gradient-to-r from-brand-600 to-brand-600 text-white shadow-md shadow-brand-500/20 scale-[1.02]'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
                 }`}
               >
@@ -132,7 +116,7 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
               placeholder="Search 55+ compliance articles..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-2xl border border-slate-200 text-xs focus:outline-none focus:border-purple-600 bg-slate-50 focus:bg-white shadow-inner transition-colors"
+              className="w-full pl-10 pr-4 py-2.5 rounded-2xl border border-slate-200 text-xs focus:outline-none focus:border-brand-600 bg-slate-50 focus:bg-white shadow-inner transition-colors"
             />
             {searchQuery && (
               <button 
@@ -150,9 +134,9 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
           <span>
             Showing <strong className="text-slate-900 font-semibold">{currentArticles.length}</strong> of{' '}
             <strong className="text-slate-900 font-semibold">{filteredArticles.length}</strong> articles
-            {selectedCategory !== 'All' && <span> in <strong className="text-purple-700">{selectedCategory}</strong></span>}
+            {selectedCategory !== 'All' && <span> in <strong className="text-brand-700">{selectedCategory}</strong></span>}
           </span>
-          <span className="font-semibold text-purple-700">
+          <span className="font-semibold text-brand-700">
             Page {currentPage} of {totalPages}
           </span>
         </div>
@@ -163,11 +147,11 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
             <BookOpen className="w-12 h-12 text-slate-400 mx-auto" />
             <h3 className="text-lg font-bold text-slate-800">No articles found matching your criteria</h3>
             <p className="text-xs text-slate-500 max-w-sm mx-auto">
-              Try adjusting your search query or clear the filter to browse the full knowledge catalog.
+              Try adjusting your search query or clear the filter to browse the full knowledge catalogue.
             </p>
             <button
               onClick={() => { setSelectedCategory('All'); setSearchQuery(''); }}
-              className="px-4 py-2 rounded-xl bg-purple-600 text-white font-bold text-xs"
+              className="px-4 py-2 rounded-xl bg-brand-600 text-white font-bold text-xs"
             >
               Reset Filters
             </button>
@@ -178,7 +162,7 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
               <div
                 key={article.id}
                 onClick={() => setActiveArticle(article)}
-                className="cursor-pointer group bg-white rounded-3xl overflow-hidden border border-slate-200/80 hover:border-purple-300 shadow-sm hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1"
+                className="cursor-pointer group bg-white rounded-3xl overflow-hidden border border-slate-200/80 hover:border-brand-300 shadow-sm hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1"
               >
                 {/* Image Container with Hover Zoom */}
                 <div>
@@ -197,7 +181,7 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
                     
                     {/* Category Pill Tag */}
                     <div className="absolute top-3 left-3">
-                      <span className="px-3 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase bg-white/90 text-purple-900 backdrop-blur-md shadow-sm border border-white/80">
+                      <span className="px-3 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase bg-white/90 text-brand-900 backdrop-blur-md shadow-sm border border-white/80">
                         {article.category}
                       </span>
                     </div>
@@ -205,7 +189,7 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
                     {/* Reading Time */}
                     <div className="absolute top-3 right-3">
                       <span className="px-2.5 py-1 rounded-full text-[10px] font-bold text-slate-100 bg-slate-950/60 backdrop-blur-md flex items-center">
-                        <Clock className="w-3 h-3 mr-1 text-purple-300" />
+                        <Clock className="w-3 h-3 mr-1 text-brand-300" />
                         {article.readTime}
                       </span>
                     </div>
@@ -213,7 +197,7 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
 
                   {/* Card Content */}
                   <div className="p-6 sm:p-7 space-y-3">
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-purple-600 transition-colors line-clamp-2 leading-snug">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors line-clamp-2 leading-snug">
                       {article.title}
                     </h3>
 
@@ -222,7 +206,7 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
                     </p>
 
                     <div className="pt-2">
-                      <span className="inline-flex items-center text-xs font-bold text-purple-600 group-hover:text-purple-800 transition-colors">
+                      <span className="inline-flex items-center text-xs font-bold text-brand-600 group-hover:text-brand-800 transition-colors">
                         <span>Read More</span>
                         <ArrowRight className="w-3.5 h-3.5 ml-1.5 transform group-hover:translate-x-1 transition-transform" />
                       </span>
@@ -236,7 +220,7 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
                     <Calendar className="w-3.5 h-3.5 mr-1.5 text-slate-400" />
                     <span>{article.date}</span>
                   </div>
-                  <span className="text-[11px] text-purple-600 font-semibold group-hover:underline">
+                  <span className="text-[11px] text-brand-600 font-semibold group-hover:underline">
                     ReTRRAC Hub
                   </span>
                 </div>
@@ -255,7 +239,7 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
               className={`flex items-center space-x-1 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 currentPage === 1
                   ? 'text-slate-300 cursor-not-allowed'
-                  : 'text-slate-700 hover:text-purple-700 hover:bg-purple-50'
+                  : 'text-slate-700 hover:text-brand-700 hover:bg-brand-50'
               }`}
             >
               <span>&lt; Previous</span>
@@ -269,8 +253,8 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
                   onClick={() => handlePageChange(pageNum)}
                   className={`w-9 h-9 rounded-xl text-xs font-bold transition-all flex items-center justify-center ${
                     currentPage === pageNum
-                      ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-500/30 scale-105'
-                      : 'text-slate-700 hover:text-purple-600 hover:bg-slate-100'
+                      ? 'bg-gradient-to-r from-brand-600 to-brand-600 text-white shadow-md shadow-brand-500/30 scale-105'
+                      : 'text-slate-700 hover:text-brand-600 hover:bg-slate-100'
                   }`}
                 >
                   {pageNum}
@@ -285,7 +269,7 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
               className={`flex items-center space-x-1 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 currentPage === totalPages
                   ? 'text-slate-300 cursor-not-allowed'
-                  : 'text-slate-700 hover:text-purple-700 hover:bg-purple-50'
+                  : 'text-slate-700 hover:text-brand-700 hover:bg-brand-50'
               }`}
             >
               <span>Next &gt;</span>
@@ -328,7 +312,7 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
 
               {/* Header Badges */}
               <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between text-xs text-white/90">
-                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-purple-600 text-white">
+                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-brand-600 text-white">
                   {activeArticle.category}
                 </span>
                 <span className="flex items-center text-xs text-slate-300 font-medium">
@@ -357,12 +341,12 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
                   This case represents a critical benchmark in statutory compliance oversight. Regulatory bodies such as the FCA, SRA, and international supervisory authorities have intensified scrutiny over procedural gaps in AML, Customer Due Diligence (CDD), and suspicious transaction monitoring.
                 </p>
 
-                <div className="p-5 rounded-2xl bg-purple-50/80 border border-purple-100 space-y-2">
-                  <h4 className="font-bold text-purple-950 text-xs uppercase tracking-wider flex items-center">
-                    <ShieldCheck className="w-4 h-4 mr-1.5 text-purple-600" />
+                <div className="p-5 rounded-2xl bg-brand-50/80 border border-brand-100 space-y-2">
+                  <h4 className="font-bold text-brand-950 text-xs uppercase tracking-wider flex items-center">
+                    <ShieldCheck className="w-4 h-4 mr-1.5 text-brand-600" />
                     <span>ReTRRAC Advisory Recommendation</span>
                   </h4>
-                  <p className="text-xs text-purple-900 leading-relaxed">
+                  <p className="text-xs text-brand-900 leading-relaxed">
                     Ensure your firm's Firm-Wide Risk Assessment (FWRA) or Practice-Wide Risk Assessment (PWRA) is updated annually. Implement automated continuous screening using CLM technology to prevent unexpected regulatory penalties.
                   </p>
                 </div>
@@ -376,9 +360,9 @@ export default function KnowledgeHubPage({ onOpenCopilot }) {
                   setActiveArticle(null);
                   if (onOpenCopilot) onOpenCopilot();
                 }}
-                className="px-4 py-2.5 rounded-xl bg-purple-100 hover:bg-purple-200 text-purple-900 font-bold text-xs flex items-center space-x-1.5 transition-colors"
+                className="px-4 py-2.5 rounded-xl bg-brand-100 hover:bg-brand-200 text-brand-900 font-bold text-xs flex items-center space-x-1.5 transition-colors"
               >
-                <Sparkles className="w-4 h-4 text-purple-600" />
+                <Sparkles className="w-4 h-4 text-brand-600" />
                 <span>Ask AI Compliance Copilot</span>
               </button>
 

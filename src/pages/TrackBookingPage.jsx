@@ -58,18 +58,21 @@ export default function TrackBookingPage() {
     <div className="min-h-screen bg-slate-50 pt-28 pb-20 font-sans">
 
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-slate-950 via-indigo-950 to-slate-900 text-white py-14">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-purple-900/80 border border-purple-400/30 text-cyan-300 text-xs font-bold uppercase tracking-wider">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+      <div className="px-3 sm:px-6 lg:px-8 pt-4 sm:pt-8">
+      <div className="page-banner relative max-w-[1400px] mx-auto py-12 md:py-0 min-h-[300px] md:h-[360px] flex items-center rounded-[28px] sm:rounded-[36px] overflow-hidden border border-brand-100 shadow-xl shadow-brand-900/5 bg-gradient-to-br from-white via-brand-50 to-[#fdf3ec] text-ink">
+        <div className="absolute -top-32 -left-24 w-[420px] h-[420px] rounded-full bg-brand-300/40 blur-[100px] pointer-events-none" />
+        <div className="absolute -bottom-40 right-0 w-[460px] h-[380px] rounded-full bg-accent-300/30 blur-[110px] pointer-events-none" />
+        <div className="relative w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white border border-brand-200 text-brand-700 text-xs font-bold uppercase tracking-wider">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
             <span>UK Official Academy Enrolment Tracker</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-black tracking-tight">
-            Track Your Course Booking Status
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-ink">
+            Track Your Course <span className="text-gradient">Booking Status</span>
           </h1>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
-            Enter your Booking Reference Number (e.g. <span className="font-mono text-cyan-300 font-bold">BK-UK-2026-8942</span>) or your registered candidate email address to inspect live milestone verification.
+          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
+            Enter your Booking Reference Number (e.g. <span className="font-mono text-accent-600 font-bold">BK-UK-2026-8942</span>) or your registered candidate email address to inspect live milestone verification.
           </p>
 
           {/* Search Box */}
@@ -79,7 +82,7 @@ export default function TrackBookingPage() {
                 e.preventDefault();
                 handleSearch();
               }}
-              className="flex space-x-2 bg-white/10 p-1.5 rounded-2xl border border-white/20 backdrop-blur-md"
+              className="flex space-x-2 bg-white p-1.5 rounded-2xl border border-brand-200 shadow-lg shadow-brand-900/5"
             >
               <div className="relative flex-1">
                 <Search className="w-4 h-4 absolute left-3.5 top-3 text-slate-400" />
@@ -88,18 +91,19 @@ export default function TrackBookingPage() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Enter Booking ID (e.g. BK-UK-...) or Email"
-                  className="w-full pl-10 pr-3 py-2.5 rounded-xl bg-white text-slate-900 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500 uppercase placeholder:normal-case font-mono"
+                  className="w-full pl-10 pr-3 py-2.5 rounded-xl bg-white text-slate-900 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500 uppercase placeholder:normal-case font-mono"
                 />
               </div>
               <button
                 type="submit"
-                className="px-5 py-2.5 rounded-xl bg-gradient-tech text-white font-bold text-xs shadow-md shadow-indigo-500/25 hover:opacity-95 transition-all"
+                className="px-5 py-2.5 rounded-xl bg-gradient-tech text-white font-bold text-xs shadow-md shadow-brand-500/25 hover:opacity-95 transition-all"
               >
                 Track Status
               </button>
             </form>
           </div>
         </div>
+      </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 space-y-8">
@@ -113,11 +117,11 @@ export default function TrackBookingPage() {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
                 <div>
                   <div className="flex items-center space-x-2">
-                    <span className="font-mono font-black text-xl text-indigo-700">
+                    <span className="font-mono font-black text-xl text-brand-700">
                       {searchedBooking.bookingId}
                     </span>
                     <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${searchedBooking.bookingStatus === 'Access Granted'
-                      ? 'bg-purple-50 text-purple-800 border-purple-200'
+                      ? 'bg-brand-50 text-brand-800 border-brand-200'
                       : searchedBooking.bookingStatus === 'Completed'
                         ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
                         : searchedBooking.bookingStatus === 'Confirmed'
@@ -166,7 +170,7 @@ export default function TrackBookingPage() {
                   <strong className="text-slate-900 block line-clamp-1">
                     {searchedBooking.courses ? searchedBooking.courses.map(c => c.title).join(', ') : 'CAFS™ Specialist'}
                   </strong>
-                  <span className="text-purple-700 font-semibold text-[11px] block">
+                  <span className="text-brand-700 font-semibold text-[11px] block">
                     Cohort: {searchedBooking.courses && searchedBooking.courses[0] ? searchedBooking.courses[0].cohort : 'July 01, 2026'}
                   </span>
                 </div>
@@ -203,7 +207,7 @@ export default function TrackBookingPage() {
                         <div className={`w-7 h-7 rounded-full flex items-center justify-center font-black text-xs shrink-0 shadow-sm ${isDone
                           ? 'bg-emerald-600 text-white'
                           : isCurrent
-                            ? 'bg-indigo-600 text-white ring-4 ring-indigo-100 animate-pulse'
+                            ? 'bg-brand-600 text-white ring-4 ring-brand-100 animate-pulse'
                             : 'bg-white border-2 border-slate-300 text-slate-400'
                           }`}>
                           {isDone ? '✓' : step.step}
@@ -212,11 +216,11 @@ export default function TrackBookingPage() {
                         <div className={`flex-1 p-4 rounded-2xl border transition-all ${isDone
                           ? 'bg-slate-50 border-slate-200 text-slate-800'
                           : isCurrent
-                            ? 'bg-purple-50/60 border-purple-200 shadow-sm'
+                            ? 'bg-brand-50/60 border-brand-200 shadow-sm'
                             : 'bg-white border-slate-100 text-slate-400'
                           }`}>
                           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                            <h4 className={`text-xs sm:text-sm font-bold ${isCurrent ? 'text-indigo-900 font-extrabold' : 'text-slate-900'}`}>
+                            <h4 className={`text-xs sm:text-sm font-bold ${isCurrent ? 'text-brand-900 font-extrabold' : 'text-slate-900'}`}>
                               {step.title}
                             </h4>
                             <span className="text-[10px] font-semibold text-slate-500 font-mono">
@@ -234,7 +238,7 @@ export default function TrackBookingPage() {
               </div>
 
               {/* Action Banner depending on stage */}
-              <div className="p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-brand-950 to-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="space-y-1 text-center sm:text-left">
                   <h4 className="text-sm font-black">
                     {searchedBooking.lmsAccessGranted
@@ -251,7 +255,7 @@ export default function TrackBookingPage() {
                 <div className="shrink-0 flex items-center space-x-2">
                   <Link
                     to="/user/dashboard"
-                    className="px-5 py-2.5 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-xs transition-colors"
+                    className="px-5 py-2.5 rounded-xl bg-brand-400 hover:bg-brand-300 text-slate-950 font-bold text-xs transition-colors"
                   >
                     Open Student Portal
                   </Link>
@@ -275,7 +279,7 @@ export default function TrackBookingPage() {
             <div className="pt-2">
               <Link
                 to="/contact"
-                className="px-5 py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-indigo-600 transition-colors inline-block"
+                className="px-5 py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-brand-600 transition-colors inline-block"
               >
                 Contact London Registrar
               </Link>
@@ -291,14 +295,14 @@ export default function TrackBookingPage() {
           <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-100 p-8 sm:p-10 space-y-6 text-slate-800 my-8">
             <div className="flex justify-between items-start pb-6 border-b border-slate-200">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-purple-700">Official VAT Tax Invoice</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-700">Official VAT Tax Invoice</span>
                 <h3 className="text-2xl font-black text-slate-900 mt-1">ReTRRAC Global Ltd.</h3>
                 <p className="text-xs text-slate-500">60 Cannon Street, London EC4N 6NP, United Kingdom</p>
                 <p className="text-[11px] text-slate-500">Company Reg: #13892014 • VAT Reg: GB 384 9201 82</p>
               </div>
 
               <div className="text-right">
-                <span className="font-mono text-sm font-bold text-indigo-700 block">{invoiceModalBooking.bookingId}</span>
+                <span className="font-mono text-sm font-bold text-brand-700 block">{invoiceModalBooking.bookingId}</span>
                 <span className="text-xs text-slate-400 block">{invoiceModalBooking.date}</span>
                 <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 inline-block mt-1">
                   PAID IN FULL
@@ -329,7 +333,7 @@ export default function TrackBookingPage() {
               <table className="w-full text-left text-xs">
                 <thead className="bg-slate-50 text-slate-500 font-bold uppercase text-[10px] border-b border-slate-200">
                   <tr>
-                    <th className="p-3">Program Description</th>
+                    <th className="p-3">Programme Description</th>
                     <th className="p-3">Cohort Batch</th>
                     <th className="p-3 text-right">Amount</th>
                   </tr>
@@ -348,7 +352,7 @@ export default function TrackBookingPage() {
                 <tfoot className="bg-slate-50 font-bold text-xs border-t border-slate-200">
                   <tr>
                     <td colSpan="2" className="p-3 text-slate-700">Total Paid:</td>
-                    <td className="p-3 text-right text-indigo-700 font-black text-sm">
+                    <td className="p-3 text-right text-brand-700 font-black text-sm">
                       {invoiceModalBooking.currency === 'INR' ? '₹' : '£'}{Number(invoiceModalBooking.totalAmount).toLocaleString()}
                     </td>
                   </tr>
@@ -357,7 +361,7 @@ export default function TrackBookingPage() {
             </div>
 
             <div className="pt-2 flex justify-between items-center text-xs">
-              <span className="text-slate-500 text-[11px]">Authorized by London Registrar & Dean Renjith Kalappurackal</span>
+              <span className="text-slate-500 text-[11px]">Authorised by London Registrar & Dean Renjith Kalappurackal</span>
               <div className="space-x-2">
                 <button
                   onClick={handlePrintInvoice}
@@ -380,4 +384,4 @@ export default function TrackBookingPage() {
 
     </div>
   );
-}
+} 

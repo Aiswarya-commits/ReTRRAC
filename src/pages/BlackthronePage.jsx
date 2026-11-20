@@ -9,7 +9,7 @@ import {
   FileCheck, 
   Calendar 
 } from 'lucide-react';
-import FloatingElements from '../components/common/FloatingElements';
+import PageBanner from '../components/common/PageBanner';
 import { academyData } from '../data/siteData';
 
 export default function BlackthronePage() {
@@ -18,31 +18,17 @@ export default function BlackthronePage() {
   return (
     <div className="bg-white pt-24 pb-20 overflow-hidden">
       
-      {/* Hero Banner with Floating Purple/Pink Elements */}
-      <div className="relative py-24 bg-gradient-to-r from-slate-900 via-purple-950 to-pink-950 text-white overflow-hidden">
-        <div className="glow-orb w-96 h-96 -top-20 -left-20 bg-purple-500/20" />
-        <div className="glow-orb w-96 h-96 -bottom-20 -right-20 bg-pink-500/20" />
+      {/* Banner – same light, logo-coloured style as every other page */}
+      <PageBanner
+        title="Blackthrone™ Corporate Training"
+        highlight="Corporate Training"
+        crumb="Blackthrone™ Training"
+        parent={{ label: 'ReTRRAC® Academy', to: '/retrrac-academy' }}
+        subtitle={blackthrone.overview}
+        image="/Finance.jpg"
+      />
 
-        {/* Floating elements */}
-        <FloatingElements count={6} theme="dark" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full floating-pill-dark text-pink-300 text-xs font-bold uppercase tracking-wider animate-float-medium">
-            <ShieldAlert className="w-3.5 h-3.5 text-purple-400" />
-            <span>Corporate Compliance Simulation Drills</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
-            Blackthrone™ Corporate Training
-          </h1>
-
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto">
-            {blackthrone.overview}
-          </p>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         
         <div className="max-w-4xl mx-auto space-y-12">
           
@@ -51,7 +37,7 @@ export default function BlackthronePage() {
               Transforming Mandatory Compliance into <span className="text-gradient">Operational Readiness</span>
             </h2>
             <p className="text-sm text-slate-600 leading-relaxed">
-              At Blackthrone Training, we specialise in delivering high-quality training solutions tailored to meet the unique needs of regulated entities. Our expert-led masterclasses simulate live suspicious transaction scenarios and test front-line defense capabilities before actual audits occur.
+              At Blackthrone Training, we specialise in delivering high-quality training solutions tailored to meet the unique needs of regulated entities. Our expert-led masterclasses simulate live suspicious transaction scenarios and test front-line defence capabilities before actual audits occur.
             </p>
           </div>
 
@@ -59,7 +45,7 @@ export default function BlackthronePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {blackthrone.highlights.map((h, idx) => (
               <div key={idx} className="p-7 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-3">
-                <span className="w-10 h-10 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center font-bold text-sm">
+                <span className="w-10 h-10 rounded-xl bg-accent-100 text-accent-700 flex items-center justify-center font-bold text-sm">
                   0{idx + 1}
                 </span>
                 <p className="text-sm font-semibold text-slate-800 leading-relaxed">{h}</p>

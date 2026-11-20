@@ -11,43 +11,22 @@ import {
   BookOpen
 } from 'lucide-react';
 
-import FloatingElements from '../components/common/FloatingElements';
+import PageBanner from '../components/common/PageBanner';
 
 export default function LawyersPage() {
   return (
     <div className="bg-white pt-24 pb-20 overflow-hidden">
       
-      {/* 1. HERO BANNER WITH GAVEL/LEGAL BACKDROP (Matches Screenshot 5) */}
-      <div className="relative py-24 bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-25">
-          <img 
-            src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1600" 
-            alt="Lawyers & Legal Compliance" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        {/* <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-indigo-950/80 to-purple-950/80 z-0" /> */}
+      {/* Banner – same light, logo-coloured style as every other page */}
+      <PageBanner
+        title="Lawyers & Solicitors"
+        highlight="Solicitors"
+        parent={{ label: 'Consulting', to: '/compliance-consulting' }}
+        subtitle="Ensuring legal practices strictly adhere to Solicitors Regulation Authority (SRA) rules and Money Laundering Regulations 2017."
+        image="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1600"
+      />
 
-        {/* Floating Ambient Particles & Glows */}
-        <FloatingElements count={6} theme="dark" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full floating-pill-dark text-cyan-300 text-xs font-bold uppercase tracking-wider animate-float-medium">
-            <Scale className="w-3.5 h-3.5 text-purple-400" />
-            <span>SRA & Regulation 18 Compliance</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
-            Lawyers & Solicitors
-          </h1>
-
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto">
-            Ensuring legal practices strictly adhere to Solicitors Regulation Authority (SRA) rules and Money Laundering Regulations 2017.
-          </p>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         
         {/* 2. REGULATION 18 MANDATES (Matches Screenshot 5) */}
         <div className="max-w-4xl mx-auto space-y-8 mb-20 text-slate-700 leading-relaxed text-sm sm:text-base">
@@ -65,21 +44,21 @@ export default function LawyersPage() {
           <div className="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200/80 space-y-4">
             
             <div className="flex items-start space-x-3 text-xs sm:text-sm">
-              <CheckCircle2 className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
               <div>
                 <strong className="text-slate-900">Customer Due Diligence (CDD):</strong> Screening for Sanctions, Proliferation financing, SDN list search, PEP / RCA / SIP, and Adverse / Negative news.
               </div>
             </div>
 
             <div className="flex items-start space-x-3 text-xs sm:text-sm">
-              <CheckCircle2 className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
               <div>
                 <strong className="text-slate-900">Identification of the Source of Funds (SoF) & Source of Wealth (SoW):</strong> Assessing plausibility, Red Flags, Internal SAR protocols, and Escalation to the National Crime Agency (NCA).
               </div>
             </div>
 
             <div className="flex items-start space-x-3 text-xs sm:text-sm">
-              <FolderLock className="w-5 h-5 text-purple-600 shrink-0 mt-0.5" />
+              <FolderLock className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
               <div>
                 <strong className="text-slate-900">Policy Packs:</strong>
                 <ul className="list-disc list-inside mt-1.5 space-y-1 text-slate-600 pl-2">
@@ -92,14 +71,14 @@ export default function LawyersPage() {
             </div>
 
             <div className="flex items-start space-x-3 text-xs sm:text-sm">
-              <CheckCircle2 className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
               <div>
                 <strong className="text-slate-900">AML Training for staff:</strong> Training material, certificates, and verifiable annual training logs for legal practitioners and support staff.
               </div>
             </div>
 
             <div className="flex items-start space-x-3 text-xs sm:text-sm">
-              <CheckCircle2 className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
               <div>
                 <strong className="text-slate-900">Practice-wide risk assessment (PWRA), Client and Matter Risk assessment:</strong> By diligently following these guidelines and conducting thorough risk assessments, law firms can effectively mitigate the risks associated with money laundering and terrorist financing.
               </div>
@@ -117,23 +96,23 @@ export default function LawyersPage() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-950 via-indigo-950 to-slate-950 opacity-90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink via-brand-950 to-brand-900 opacity-90" />
 
           <div className="relative z-10 space-y-4 max-w-2xl mx-auto">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
               Mandatory Compliance Training Catalogue for Lawyers & Solicitors
             </h3>
-            <p className="text-xs sm:text-sm text-purple-200">
-              Download our SRA-compliant training catalog, Source of Funds verification checklists, and PWRA templates.
+            <p className="text-xs sm:text-sm text-brand-200">
+              Download our SRA-compliant training catalogue, Source of Funds verification checklists, and PWRA templates.
             </p>
             <div className="pt-2">
               <a
                 href="https://retrrac.org/wp-content/uploads/2025/01/ReTRRAC-Brochure.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-xl bg-white text-slate-950 font-bold text-xs sm:text-sm shadow-xl hover:bg-slate-100 transition-all"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-xl bg-accent-500 text-white font-bold text-xs sm:text-sm shadow-xl hover:bg-accent-600 transition-all"
               >
-                <Download className="w-4 h-4 text-purple-600" />
+                <Download className="w-4 h-4 text-brand-600" />
                 <span>Download Now</span>
               </a>
             </div>
@@ -148,7 +127,7 @@ export default function LawyersPage() {
           <div className="flex flex-wrap items-center justify-center gap-6">
             {["FCA", "HM Revenue & Customs", "OPBAS", "The Law Society", "Solicitors Regulation Authority (SRA)"].map((name, idx) => (
               <div key={idx} className="px-6 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-800 shadow-sm flex items-center space-x-2">
-                <ShieldCheck className="w-4 h-4 text-purple-600" />
+                <ShieldCheck className="w-4 h-4 text-brand-600" />
                 <span>{name}</span>
               </div>
             ))}
@@ -156,7 +135,7 @@ export default function LawyersPage() {
         </div>
 
         {/* 5. BOOK A FREE CONSULTATION TODAY (Matches Screenshot 5 Bottom) */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-purple-950 via-indigo-950 to-slate-900 text-white text-center space-y-6 shadow-2xl relative overflow-hidden">
+        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-brand-800 via-brand-700 to-brand-600 text-white text-center space-y-6 shadow-2xl relative overflow-hidden">
           <div className="space-y-4 max-w-xl mx-auto">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
               Book a FREE Consultation today
@@ -167,7 +146,7 @@ export default function LawyersPage() {
             <div className="pt-2">
               <Link
                 to="/contact"
-                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-xl bg-white text-slate-950 font-bold text-xs sm:text-sm shadow-xl hover:bg-slate-100 transition-all"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-xl bg-accent-500 text-white font-bold text-xs sm:text-sm shadow-xl hover:bg-accent-600 transition-all"
               >
                 <span>Schedule your Appointment</span>
                 <ArrowRight className="w-4 h-4" />

@@ -71,7 +71,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
   };
 
   const navLinkClass = ({ isActive }) => 
-    `whitespace-nowrap px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold rounded-lg transition-colors ${
+    `whitespace-nowrap px-2.5 xl:px-2 py-2 text-xs xl:text-sm font-semibold rounded-lg transition-colors ${
       isActive 
         ? 'text-brand-600 bg-brand-50/70 font-bold' 
         : 'text-slate-600 hover:text-brand-600 hover:bg-slate-50'
@@ -151,12 +151,11 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
           ? 'bg-white/90 backdrop-blur-xl py-2.5 shadow-lg shadow-brand-950/5 border-b border-slate-100' 
           : 'bg-white/95 backdrop-blur-md py-3 border-b border-slate-100'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             
-            {/* Logo */}
-            {/* Logo */}
-            <Link to="/" className="flex items-center group shrink-0 mr-2">
+            {/* Logo – set apart from the links by a thin divider */}
+            <Link to="/" className="flex items-center group shrink-0 pr-3 xl:pr-4 mr-2 xl:mr-3 border-r border-slate-200">
               <img
                 src="/Headerlogo.png"
                 alt="ReTRRAC Global"
@@ -164,7 +163,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
               />
             </Link>
             {/* Desktop Navigation Links */}
-            <div className="hidden xl:flex items-center space-x-1 xl:space-x-1.5">
+            <div className="hidden xl:flex flex-1 items-center space-x-0.5">
               
               <NavLink to="/our-story" className={navLinkClass}>
                 Our Story
@@ -326,17 +325,17 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
             </div>
 
             {/* Cart, Wishlist, Portals & CTAs */}
-            <div className="hidden md:flex items-center space-x-2 xl:space-x-2.5 whitespace-nowrap">
+            <div className="hidden md:flex items-center space-x-2 whitespace-nowrap xl:pl-3 xl:ml-1 xl:border-l xl:border-slate-200">
               
               {/* Wishlist Button with Badge */}
               <button
                 onClick={openWishlist}
-                className="relative p-2 rounded-xl text-slate-600 hover:text-pink-600 hover:bg-pink-50 transition-colors"
+                className="relative p-2 rounded-xl text-slate-600 hover:text-accent-600 hover:bg-accent-50 transition-colors"
                 title="Saved Wishlist"
               >
                 <Heart className="w-4 h-4" />
                 {wishlistCount > 0 && (
-                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-pink-600 text-white font-black text-[9px] flex items-center justify-center animate-scale-up">
+                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-accent-500 text-white font-black text-[9px] flex items-center justify-center animate-scale-up">
                     {wishlistCount}
                   </span>
                 )}
@@ -345,11 +344,11 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
               {/* Basket / Cart Button with Badge */}
               <button
                 onClick={openCart}
-                className="relative flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition-colors"
+                className="relative flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-brand-50 hover:bg-brand-100 border border-brand-100 text-ink font-bold text-xs transition-colors"
                 title="View Basket / Cart"
               >
                 <ShoppingBag className="w-4 h-4 text-brand-600" />
-                <span className="hidden 2xl:inline">Basket</span>
+                <span className="hidden min-[1700px]:inline">Basket</span>
                 {cartCount > 0 && (
                   <span className="w-4 h-4 rounded-full bg-brand-600 text-white font-black text-[10px] flex items-center justify-center animate-scale-up">
                     {cartCount}
@@ -362,7 +361,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                 <div className="flex items-center space-x-1.5">
                   <button
                     onClick={() => openAuthModal('signin')}
-                    className="flex items-center space-x-1 px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-brand-600 hover:bg-slate-50 transition-colors"
+                    className="flex items-center space-x-1 px-3 py-2 rounded-xl text-xs font-bold text-brand-700 border border-brand-200 hover:bg-brand-50 transition-colors"
                   >
                     <User className="w-3.5 h-3.5 text-brand-600" />
                     <span>Sign In</span>
@@ -370,7 +369,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
 
                   <button
                     onClick={() => openAuthModal('signup')}
-                    className="flex items-center space-x-1 px-3 py-2 rounded-xl text-xs font-bold text-brand-700 bg-brand-50 hover:bg-brand-100 transition-colors border border-brand-200/80 shadow-sm"
+                    className="flex items-center space-x-1 px-3 py-2 rounded-xl text-xs font-bold text-white bg-accent-500 hover:bg-accent-600 transition-colors shadow-sm shadow-accent-500/30"
                   >
                     <span>Register</span>
                   </button>
@@ -415,11 +414,11 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
               {/* AI Copilot Quick Button */}
               <button
                 onClick={onOpenCopilot}
-                className="flex items-center space-x-1 px-3 py-2 rounded-xl text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200/80 hover:bg-brand-100 transition-all shadow-sm"
+                className="flex items-center space-x-1 px-3 py-2 rounded-xl text-xs font-bold text-white bg-brand-500 hover:bg-brand-600 transition-all shadow-sm shadow-brand-500/30"
                 title="Chat with ReTRRAC AI Copilot"
               >
-                <Sparkles className="w-3.5 h-3.5 text-brand-600 animate-pulse" />
-                <span className="hidden 2xl:inline">AI Copilot</span>
+                <Sparkles className="w-3.5 h-3.5 text-white animate-pulse" />
+                <span className="hidden min-[1700px]:inline">AI Copilot</span>
               </button>
 
               {/* Risk Scanner CTA */}
@@ -427,7 +426,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                 onClick={onOpenRiskScanner}
                 className="flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-white bg-gradient-tech hover:opacity-95 shadow-md shadow-brand-500/20 hover:shadow-brand-500/30 transition-all transform hover:-translate-y-0.5"
               >
-                <Zap className="w-3.5 h-3.5 text-cyan-200" />
+                <Zap className="w-3.5 h-3.5 text-white" />
                 <span className="hidden xl:inline">AI Audit</span>
               </button>
 

@@ -54,9 +54,9 @@ export default function CashfreeReturnPage() {
   return (
     <div className="min-h-screen bg-slate-50 pt-32 pb-24 flex items-center justify-center p-4 font-sans">
       <div className="max-w-lg w-full bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
-        <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-6 text-center">
-          <div className="inline-flex items-center space-x-2 text-cyan-300 text-xs font-bold uppercase tracking-wider">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+        <div className="bg-gradient-to-br from-white via-brand-50 to-[#fdf3ec] text-ink border-b border-brand-100 p-6 text-center">
+          <div className="inline-flex items-center space-x-2 text-brand-700 text-xs font-bold uppercase tracking-wider">
+            <ShieldCheck className="w-4 h-4 text-emerald-500" />
             <span>Cashfree Payment Confirmation</span>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function CashfreeReturnPage() {
         <div className="p-8 text-center space-y-5">
           {state === 'checking' && (
             <>
-              <Loader2 className="w-10 h-10 text-indigo-600 animate-spin mx-auto" />
+              <Loader2 className="w-10 h-10 text-brand-600 animate-spin mx-auto" />
               <h1 className="text-lg font-extrabold text-slate-900">Confirming your payment with Cashfree…</h1>
               <p className="text-xs text-slate-500">Please don’t close this page.</p>
             </>
@@ -78,7 +78,7 @@ export default function CashfreeReturnPage() {
               <h1 className="text-2xl font-black text-slate-900">Payment successful</h1>
               <p className="text-xs text-slate-600">Thank you, {booking.studentName.split(' ')[0]}. Your enrolment is confirmed.</p>
               <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-left text-xs space-y-2">
-                <div className="flex justify-between"><span className="text-slate-500">Booking Reference:</span><span className="font-mono font-black text-indigo-700">{booking.bookingId}</span></div>
+                <div className="flex justify-between"><span className="text-slate-500">Booking Reference:</span><span className="font-mono font-black text-brand-700">{booking.bookingId}</span></div>
                 <div className="flex justify-between"><span className="text-slate-500">Cashfree Payment ID:</span><span className="font-mono font-bold">{booking.cashfreePaymentId}</span></div>
                 <div className="flex justify-between"><span className="text-slate-500">Amount Paid:</span><span className="font-bold">₹{Number(booking.totalAmount).toLocaleString('en-IN')}</span></div>
               </div>

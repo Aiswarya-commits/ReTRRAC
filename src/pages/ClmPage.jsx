@@ -14,7 +14,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import ParallaxCard from '../components/common/ParallaxCard';
-import FloatingElements from '../components/common/FloatingElements';
+import PageBanner from '../components/common/PageBanner';
 import { clmTechnology } from '../data/siteData';
 
 export default function ClmPage() {
@@ -24,31 +24,16 @@ export default function ClmPage() {
   return (
     <div className="bg-white pt-24 pb-20 overflow-hidden">
       
-      {/* Hero Banner with Floating Particles */}
-      <div className="relative py-24 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 text-white overflow-hidden">
-        <div className="glow-orb w-96 h-96 -top-20 -left-20 bg-purple-500/20" />
-        <div className="glow-orb w-96 h-96 -bottom-20 -right-20 bg-indigo-500/20" />
+      {/* Banner – same light, logo-coloured style as every other page */}
+      <PageBanner
+        title="Client’s Lifecycle Management (CLM) System"
+        highlight="Lifecycle Management"
+        parent={{ label: 'Consulting', to: '/compliance-consulting' }}
+        subtitle={clmTechnology.tagline}
+        image="/hero-building.jpg"
+      />
 
-        {/* Floating purple & white elements */}
-        <FloatingElements count={6} theme="dark" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full floating-pill-dark text-cyan-300 text-xs font-bold uppercase tracking-wider animate-float-medium">
-            <Cpu className="w-3.5 h-3.5 text-purple-400" />
-            <span>Proprietary RegTech Architecture</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
-            Client’s Lifecycle Management (CLM) System
-          </h1>
-
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto">
-            {clmTechnology.tagline}
-          </p>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         
         {/* Overview & Key Stats */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
@@ -59,32 +44,32 @@ export default function ClmPage() {
 
         {/* Global Scale Metric Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-          <div className="p-7 rounded-3xl bg-gradient-to-br from-indigo-50/70 to-purple-50/50 border border-indigo-100 flex items-start space-x-4">
-            <div className="p-3.5 rounded-2xl bg-indigo-600 text-white shrink-0 shadow-md">
+          <div className="p-7 rounded-3xl bg-gradient-to-br from-brand-50/70 to-brand-50/50 border border-brand-100 flex items-start space-x-4">
+            <div className="p-3.5 rounded-2xl bg-brand-600 text-white shrink-0 shadow-md">
               <Globe2 className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-3xl font-black text-indigo-900">237 Countries</p>
+              <p className="text-3xl font-black text-brand-900">237 Countries</p>
               <p className="text-xs text-slate-600 mt-1">Full global coverage with local regulatory watchlist compliance.</p>
             </div>
           </div>
 
-          <div className="p-7 rounded-3xl bg-gradient-to-br from-purple-50/70 to-pink-50/50 border border-purple-100 flex items-start space-x-4">
-            <div className="p-3.5 rounded-2xl bg-purple-600 text-white shrink-0 shadow-md">
+          <div className="p-7 rounded-3xl bg-gradient-to-br from-brand-50/70 to-accent-50/50 border border-brand-100 flex items-start space-x-4">
+            <div className="p-3.5 rounded-2xl bg-brand-600 text-white shrink-0 shadow-md">
               <ScanLine className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-3xl font-black text-purple-900">13,000+ IDs</p>
+              <p className="text-3xl font-black text-brand-900">13,000+ IDs</p>
               <p className="text-xs text-slate-600 mt-1">Automated biometric, MRZ, and NFC verification across international passports & IDs.</p>
             </div>
           </div>
 
-          <div className="p-7 rounded-3xl bg-gradient-to-br from-cyan-50/70 to-blue-50/50 border border-cyan-100 flex items-start space-x-4">
-            <div className="p-3.5 rounded-2xl bg-cyan-600 text-white shrink-0 shadow-md">
+          <div className="p-7 rounded-3xl bg-gradient-to-br from-brand-50/70 to-blue-50/50 border border-brand-100 flex items-start space-x-4">
+            <div className="p-3.5 rounded-2xl bg-brand-600 text-white shrink-0 shadow-md">
               <Database className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-3xl font-black text-cyan-900">150M+ Entities</p>
+              <p className="text-3xl font-black text-brand-900">150M+ Entities</p>
               <p className="text-xs text-slate-600 mt-1">Automated KYB lookup across 50+ business registers worldwide.</p>
             </div>
           </div>
@@ -104,13 +89,13 @@ export default function ClmPage() {
                   onClick={() => setActivePillarIndex(idx)}
                   className={`cursor-pointer p-5 rounded-2xl border transition-all duration-300 ${
                     isActive
-                      ? 'bg-purple-50/80 border-purple-400 shadow-md'
+                      ? 'bg-brand-50/80 border-brand-400 shadow-md'
                       : 'bg-white border-slate-200 hover:border-slate-300'
                   }`}
                 >
                   <div className="flex items-center space-x-3.5">
                     <div className={`p-2.5 rounded-xl ${
-                      isActive ? 'bg-indigo-600 text-white shadow' : 'bg-slate-100 text-slate-700'
+                      isActive ? 'bg-brand-600 text-white shadow' : 'bg-slate-100 text-slate-700'
                     }`}>
                       <Icon className="w-5 h-5" />
                     </div>
@@ -130,7 +115,7 @@ export default function ClmPage() {
                 <div className="relative z-10 space-y-6">
                   <div className="flex items-center justify-between pb-4 border-b border-slate-800">
                     <div className="flex items-center space-x-3">
-                      <span className="p-2 rounded-lg bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
+                      <span className="p-2 rounded-lg bg-brand-500/20 text-brand-400 border border-brand-500/30">
                         <Layers className="w-5 h-5" />
                       </span>
                       <div>
@@ -138,7 +123,7 @@ export default function ClmPage() {
                         <p className="text-xs text-slate-400">{clmTechnology.pillars[activePillarIndex].description}</p>
                       </div>
                     </div>
-                    <span className="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-800">
+                    <span className="text-xs font-mono font-bold text-brand-400 bg-brand-950/60 px-3 py-1 rounded-full border border-brand-800">
                       Live RegTech
                     </span>
                   </div>
@@ -146,7 +131,7 @@ export default function ClmPage() {
                   <div className="space-y-3">
                     {clmTechnology.pillars[activePillarIndex].features.map((feat, fIdx) => (
                       <div key={fIdx} className="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 space-y-1">
-                        <div className="flex items-center space-x-2 text-cyan-300 font-bold text-xs sm:text-sm">
+                        <div className="flex items-center space-x-2 text-brand-300 font-bold text-xs sm:text-sm">
                           <Check className="w-4 h-4 text-emerald-400 shrink-0" />
                           <span>{feat.name}</span>
                         </div>

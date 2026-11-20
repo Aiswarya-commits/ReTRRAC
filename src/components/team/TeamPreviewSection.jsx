@@ -53,7 +53,7 @@ export default function TeamPreviewSection() {
             to="/team"
             className="group inline-flex items-center space-x-2 px-8 py-3.5 rounded-2xl bg-gradient-tech text-white font-bold text-xs sm:text-sm shadow-lg shadow-brand-500/25 hover:opacity-95 transition-all"
           >
-            <span>View All Team ({teamMembers.length})</span>
+            <span>View All Team ({homeTeam.length})</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

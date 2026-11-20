@@ -44,20 +44,18 @@ export const siteMeta = {
 export const ourStoryData = {
   heroTitle: "Our Story",
   heroSubtitle: "Empowering businesses worldwide to achieve regulatory excellence through technology, consulting, and accredited training.",
-  leadParagraph: "ReTRRAC Global is a leading Global Compliance and Risk Review Consulting & Training Company, committed to providing businesses with innovative, technology-driven solutions for regulatory compliance and risk management. Headquartered in London, United Kingdom, with operations in India and the UAE, we are dedicated to empowering businesses to comply with regulatory requirements.",
-  secondParagraph: "Our team of experienced industry professionals brings a diverse range of knowledge, skills, and decades of experience in financial services, legal, regulatory affairs, AML, and risk review. We specialize in empowering businesses to achieve compliance excellence through tailored consulting, comprehensive training programs, and cutting-edge RegTech solutions.",
+leadParagraph: "ReTRRAC Global is a leading Compliance Consulting, and Training organisation dedicated to helping businesses navigate the increasingly complex regulatory landscape. With headquarters in London, United Kingdom, and operational presence across India and the United Arab Emirates, we provide innovative, technology-driven solutions that enable organizations to achieve and maintain regulatory compliance with confidence.",  secondParagraph: "Our team of experienced industry professionals brings a diverse range of knowledge, skills, and decades of experience in financial services, legal, regulatory affairs, AML, and risk review. We specialize in empowering businesses to achieve compliance excellence through tailored consulting, comprehensive training programs, and cutting-edge RegTech solutions.",
   
-  vision: "To be the globally recognized benchmark in regulatory transformation, risk intelligence, and financial crime prevention, enabling institutions to operate with unmatched transparency, resilience, and ethical confidence.",
-  mission: "To deliver transformative consulting, enterprise RegTech tools, and world-class accredited training that empower organizations to exceed regulatory expectations and build lasting cultures of compliance.",
-  
+vision: "To transform the compliance landscape by making regulatory risk management simpler, smarter, and more accessible for businesses worldwide.",  
+mission: "We leverage technology, industry expertise, and tailored compliance solutions to help organizations manage risk, meet regulatory obligations, and build trusted relationships with stakeholders.",  
   coreValues: [
-    { title: "Integrity", desc: "Uncompromising ethical standards in all regulatory advice and client engagements." },
-    { title: "Precision", desc: "Rigorous attention to detail in forensic audits, policy drafting, and risk assessment." },
-    { title: "Innovation", desc: "Leveraging cutting-edge RegTech and AI to streamline compliance and due diligence." },
-    { title: "Client Centricity", desc: "Tailoring strategies to the bespoke operational reality of each regulated institution." },
-    { title: "Empowerment", desc: "Building institutional capacity through knowledge transfer and CPD-accredited training." }
+    { title: "Integrity", desc: "We uphold the highest ethical and regulatory standards." },
+    { title: "Accountability", desc: "We take ownership of delivering reliable compliance outcomes." },
+    { title: "Client-Centricity", desc: "We place our clients' needs at the heart of every solution." },
+    { title: "Innovation", desc: "We leverage technology to simplify complex compliance challenges." },
+    { title: "Excellence", desc: "We strive for quality, accuracy, and continuous improvement." },
+    { title: "Collaboration", desc: "We work as trusted partners to achieve shared success." }
   ],
-
   journey: [
     {
       year: "2018",
