@@ -40,7 +40,7 @@ export default function PageBanner({ title, highlight, subtitle, image, crumb, p
               src={image}
               alt=""
               aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover opacity-[0.18] grayscale-[35%]"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.35] grayscale-[35%]"
             />
           )}
 
