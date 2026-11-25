@@ -29,7 +29,7 @@ import {
 } from 'lucide-react';
 import FloatingElements from '../components/common/FloatingElements';
 import PayPalCheckoutModal from '../components/payment/PayPalCheckoutModal';
-import { coursesCatalog, getCourseById } from '../data/coursesCatalog';
+import { coursesCatalog, listedCourses, getCourseById } from '../data/coursesCatalog';
 import { useCurrency } from '../context/CurrencyContext';
 import { useCartWishlist } from '../context/CartWishlistContext';
 import { useAuth } from '../context/AuthContext';
@@ -76,23 +76,8 @@ export default function CourseDetailPage({ onOpenCopilot }) {
   return (
     <div className="bg-white pt-24 pb-20 font-sans">
       
-      {/* Breadcrumb Navigation (Inspired by UCEM Online Academy) */}
-      <div className="pt-10 sm:pt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center space-x-2 text-xs text-slate-500 overflow-x-auto whitespace-nowrap">
-            <Link to="/" className="hover:text-brand-600 transition-colors">Home</Link>
-            <span>/</span>
-            <Link to="/retrrac-academy" className="hover:text-brand-600 transition-colors">ReTRRAC Academy</Link>
-            <span>/</span>
-            <span className="text-slate-400">Courses</span>
-            <span>/</span>
-            <span className="font-bold text-slate-800 truncate max-w-xs">{course.title}</span>
-          </nav>
-        </div>
-      </div>
-
       {/* Hero Header Section */}
-      <div className="px-3 sm:px-6 lg:px-8 pt-4">
+      <div className="px-3 sm:px-6 lg:px-8 pt-10 sm:pt-12">
       <div className="page-banner relative max-w-[1400px] mx-auto py-12 md:py-0 min-h-[300px] md:h-[360px] flex items-center rounded-[28px] sm:rounded-[36px] overflow-hidden border border-brand-100 shadow-xl shadow-brand-900/5 bg-gradient-to-br from-white via-brand-50 to-[#fdf3ec] text-ink">
         <div className="absolute -top-32 -left-24 w-[420px] h-[420px] rounded-full bg-brand-300/40 blur-[100px] pointer-events-none" />
         <div className="absolute -bottom-40 right-0 w-[460px] h-[380px] rounded-full bg-accent-300/30 blur-[110px] pointer-events-none" />
@@ -559,7 +544,7 @@ export default function CourseDetailPage({ onOpenCopilot }) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {coursesCatalog
+            {listedCourses
               .filter(c => c.id !== course.id)
               .slice(0, 3)
               .map(rel => (

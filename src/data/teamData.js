@@ -14,7 +14,7 @@
 // colleagues (or delete them) before going live.
 // ─────────────────────────────────────────────────────────────
 import { leadershipTeam } from './siteData';
-const MEB = '/Mebin.jpg';
+const MEB = '/Mebin-portrait.jpg'; // closer crop so he matches the other headshots
 const DAL = '/Daliya.jpg';
 const GUR = '/Gurpreet.jpg';
 const ARUN = '/Arun.jpg';

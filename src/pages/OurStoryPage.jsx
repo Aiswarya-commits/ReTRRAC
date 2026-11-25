@@ -17,12 +17,12 @@ import {
   Eye,
   Target,
   MapPin,
-  Star,
-  Quote,
   CheckCircle2,
   ArrowRight
 } from 'lucide-react';
 import PageBanner from '../components/common/PageBanner';
+import TestimonialCards from '../components/common/TestimonialCards';
+import { studentReviews } from '../data/testimonialsData';
 import { ourStoryData, consultingSectors } from '../data/siteData';
 
 // Icons are matched to the titles in siteData.js (ourStoryData.coreValues / whyPartnerWithUs).
@@ -278,43 +278,6 @@ export default function OurStoryPage({ onOpenCopilot }) {
           </div>
         </section>
 
-        {/* 7. LEARNING & DEVELOPMENT */}
-        <section className="mb-24">
-          <SectionHeading
-            eyebrow="Capacity Building"
-            title="Learning &"
-            highlight="Development"
-            text="CPD-accredited courses and corporate simulations to advance your career and institutional preparedness."
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {ourStoryData.learningPrograms.map((prog, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-3xl p-7 border border-slate-200 shadow-md hover:border-brand-300 hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <div className="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center font-black">
-                    0{idx + 1}
-                  </div>
-                  <h4 className="text-base font-extrabold text-ink">{prog.title}</h4>
-                  <p className="text-[11px] font-semibold text-accent-600">{prog.duration}</p>
-                  <p className="text-xs text-slate-600 leading-relaxed">{prog.desc}</p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-slate-100">
-                  <Link
-                    to={prog.path}
-                    className="text-xs font-bold text-brand-600 hover:text-brand-800 inline-flex items-center gap-1"
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* 8. WHY PARTNER WITH US */}
         <section className="mb-24">
           <SectionHeading
@@ -344,32 +307,16 @@ export default function OurStoryPage({ onOpenCopilot }) {
           </div>
         </section>
 
-        {/* 9. CLIENT TESTIMONIALS & REVIEWS */}
+        {/* 9. STUDENT REVIEWS (client testimonials are on the Home page) */}
         <section className="mb-20 p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200">
-          <SectionHeading eyebrow="What Clients Say" title="Client Testimonials" highlight="& Reviews" />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {ourStoryData.testimonials.map((t, idx) => (
-              <div key={idx} className="relative p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3">
-                <Quote className="absolute top-5 right-5 w-8 h-8 text-brand-100" />
-                <div className="flex items-center gap-1 text-amber-400">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400" />
-                  ))}
-                </div>
-                <p className="text-sm text-slate-600 italic leading-relaxed">"{t.comment}"</p>
-                <div className="flex items-center gap-3 pt-2 border-t border-slate-100">
-                  <div className="w-9 h-9 rounded-full bg-gradient-tech text-white text-xs font-black flex items-center justify-center">
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-ink">{t.name}</p>
-                    <p className="text-[11px] text-slate-400">{t.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <SectionHeading
+            eyebrow="ReTRRAC® Academy"
+            title="Student"
+            highlight="Reviews"
+            text="What our learners say about training with the ReTRRAC® Academy."
+          />
+          {/* Reviews live in src/data/testimonialsData.js – add new ones there */}
+          <TestimonialCards items={studentReviews} />
         </section>
 
         {/* 10. FREE CONSULTATION CTA */}

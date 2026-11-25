@@ -35,6 +35,8 @@ import HeroSection from '../components/hero/HeroSection';
 import ParallaxCard from '../components/common/ParallaxCard';
 import FloatingElements from '../components/common/FloatingElements';
 import { siteMeta, consultingSectors, leadershipTeam, successStories } from '../data/siteData';
+import TestimonialCards from '../components/common/TestimonialCards';
+import { clientTestimonials } from '../data/testimonialsData';
 import TeamPreviewSection from '../components/team/TeamPreviewSection';
 
 export default function HomePage({ onOpenRiskScanner, onOpenCopilot }) {
@@ -54,7 +56,7 @@ export default function HomePage({ onOpenRiskScanner, onOpenCopilot }) {
     {
       label: 'Risk Management',
       title: 'Financial Crime Risk Advisory',
-      description: 'Helping organizations manage AML, sanctions, and regulatory risk with confidence.',
+      description: 'Helping organisations manage AML, sanctions, and regulatory risk with confidence.',
       points: ['Risk Assessments', 'AML Reviews', 'Sanctions Advisory'],
       Icon: CheckCircle,
       link: '/compliance-consulting/banks-financial-institutions',
@@ -78,23 +80,6 @@ export default function HomePage({ onOpenRiskScanner, onOpenCopilot }) {
       link: '/retrrac-academy',
       linkLabel: 'Explore the Academy',
       featured: true
-    }
-  ];
-
-  // Client testimonials – use real client quotes only (add a third here when you have one;
-  // the grid switches to 3 columns automatically)
-  const testimonials = [
-    {
-      quote: "The CAFS™ program and Blackthrone simulations elevated our entire AML analysis unit. The real-world transaction drills and SAR filing procedures gave our analysts the confidence to handle high-risk international audits.",
-      author: "Global Head of Financial Crime",
-      org: "Tier-1 UK FinTech & Electronic Money Institution",
-      initials: "FC"
-    },
-    {
-      quote: "ReTRRAC's Firm-Wide Risk Assessment templates and guidance helped us prepare our practice for ICAEW and HMRC supervisory review with zero findings. Outstanding professionalism and measured judgement.",
-      author: "Senior Partner & MLRO",
-      org: "Chartered Accounting Firm, Birmingham",
-      initials: "SP"
     }
   ];
 
@@ -163,7 +148,7 @@ export default function HomePage({ onOpenRiskScanner, onOpenCopilot }) {
                     <Globe2 className="w-4 h-4 text-brand-600" />
                     <span>India & UAE Hubs</span>
                   </div>
-                  <p className="text-xs text-slate-800 font-semibold">Pune & Kochi Global Delivery Centers</p>
+                  <p className="text-xs text-slate-800 font-semibold">Pune, Kochi & Chennai Global Delivery Centres</p>
                   <p className="text-[11px] text-slate-500">Dubai Regional Advisory Office</p>
                 </div>
               </div>
@@ -302,7 +287,7 @@ export default function HomePage({ onOpenRiskScanner, onOpenCopilot }) {
 
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-accent-50 text-accent-700 border border-accent-200">
-              Client Perspectives
+              Client Testimonials
             </span>
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
               Trusted by the firms <span className="text-gradient">we advise.</span>
@@ -312,36 +297,8 @@ export default function HomePage({ onOpenRiskScanner, onOpenCopilot }) {
             </p>
           </div>
 
-          <div className={`grid grid-cols-1 gap-8 ${testimonials.length === 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' : 'md:grid-cols-3'}`}>
-            {testimonials.map((t, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-xl shadow-slate-900/5 flex flex-col justify-between space-y-6 hover:border-brand-300 transition-all"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-1 text-amber-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <Quote className="w-8 h-8 text-accent-300" />
-                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
-                    "{t.quote}"
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-slate-100 flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-xs">
-                    {t.initials}
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">{t.author}</h4>
-                    <p className="text-[11px] text-slate-500">{t.org}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Testimonials live in src/data/testimonialsData.js – add new ones there */}
+          <TestimonialCards items={clientTestimonials} />
 
         </div>
       </section>

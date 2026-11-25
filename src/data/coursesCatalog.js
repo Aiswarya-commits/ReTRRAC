@@ -31,12 +31,12 @@ export const coursesCatalog = [
 
 Supervised under UK Money Laundering Regulations 2017 (MLR 2017), the Proceeds of Crime Act 2002 (POCA), and international FATF standards, candidates master Customer Due Diligence (CDD), Enhanced Due Diligence (EDD), PEP risk management, UK OFSI and US OFAC sanctions compliance, and live SAR filings with the UK National Crime Agency (NCA).
 
-Crucially, the programme concludes with a mandatory 20-hour Live Forensic Capstone Project where candidates analyze simulated multi-layered banking transaction datasets, identify trade-based laundering networks, and defend their investigative findings before a panel of former Tier-1 UK MLROs.`,
+Crucially, the programme concludes with a mandatory 20-hour Live Forensic Capstone Project where candidates analyse simulated multi-layered banking transaction datasets, identify trade-based laundering networks, and defend their investigative findings before a panel of former Tier-1 UK MLROs.`,
     learningOutcomes: [
       "Master the legal duties and statutory liabilities of nominated officers under UK MLR 2017, POCA 2002, and the Economic Crime and Corporate Transparency Act 2023.",
       "Conduct forensic Customer Due Diligence (CDD) and Enhanced Due Diligence (EDD) across nested offshore shell companies and high-risk jurisdictions.",
       "Identify Ultimate Beneficial Ownership (UBO) structures designed to circumvent international transparency registers.",
-      "Navigate UK OFSI, EU, UN, and US OFAC sanctions screening, fuzzy matching algorithms, and license exemptions.",
+      "Navigate UK OFSI, EU, UN, and US OFAC sanctions screening, fuzzy matching algorithms, and licence exemptions.",
       "Formulate defensible practice-wide risk assessments (FWRA/PWRA) with dynamic risk-scoring methodology.",
       "Detect complex transactional red flags including smurfing, carousel VAT fraud, trade-based money laundering, and crypto mixer hopping.",
       "Draft compliant and prosecutable Suspicious Activity Reports (SARs) and Defence Against Money Laundering (DAML) requests for the UK NCA.",
@@ -77,7 +77,7 @@ Crucially, the programme concludes with a mandatory 20-hour Live Forensic Capsto
         topics: [
           "Sanctions evasion typologies: transshipment hubs, flag hopping, and AIS spoofing",
           "Ownership and control rules (50% rule and indirect control criteria)",
-          "General Licenses, Specific Licenses, and reporting frozen assets to OFSI",
+          "General Licences, Specific Licences, and reporting frozen assets to OFSI",
           "Counter-Proliferation Financing (CPF) risk assessments under MLR 2017 amendments",
           "Sanctions list screening tools, fuzzy name matching, and true-match discounting"
         ]
@@ -86,7 +86,7 @@ Crucially, the programme concludes with a mandatory 20-hour Live Forensic Capsto
         num: 4,
         title: "Module 4: Transaction Monitoring, Red Flags & UK NCA SAR Reporting",
         duration: "10 Hours",
-        description: "Practical tradecraft in analyzing anomalous transaction volumes, drafting SARs, and avoiding tipping off.",
+        description: "Practical tradecraft in analysing anomalous transaction volumes, drafting SARs, and avoiding tipping off.",
         topics: [
           "Rules-based and AI-powered transaction monitoring system architecture",
           "Smurfing, structuring, rapid movement of funds, and mule account identification",
@@ -112,12 +112,12 @@ Crucially, the programme concludes with a mandatory 20-hour Live Forensic Capsto
         num: 6,
         title: "Module 6: Live 20-Hour Forensic Compliance Capstone Project",
         duration: "20 Hours",
-        description: "A comprehensive, realistic forensic simulation analyzing synthetic UK banking ledgers and defending an investigative portfolio.",
+        description: "A comprehensive, realistic forensic simulation analysing synthetic UK banking ledgers and defending an investigative portfolio.",
         topics: [
           "Ingestion of 5,000+ synthetic cross-border banking transactions",
           "Forensic entity resolution and illicit fund trail reconstruction",
           "Drafting an executive remediation dossier and practice-wide audit response",
-          "Simulated live oral defense before former Tier-1 UK MLRO examiners",
+          "Simulated live oral defence before former Tier-1 UK MLRO examiners",
           "Formal CPD UK accreditation assessment and certificate qualification"
         ]
       }
@@ -134,7 +134,7 @@ Crucially, the programme concludes with a mandatory 20-hour Live Forensic Capsto
       "Proficiency in written and spoken English (all live lectures, documentation, and assessments are conducted in English).",
       "Access to a computer with high-speed internet to access the ReTRRAC UK Virtual Classroom and CLM Sandbox."
     ],
-    assessmentMethod: "Continuous module assessments (40%) + Final 20-Hour Forensic Capstone Project & Oral Defense (60%). Passing grade of 70% required to confer the CPD UK Accredited CAFS™ Credential.",
+    assessmentMethod: "Continuous module assessments (40%) + Final 20-Hour Forensic Capstone Project & Oral Defence (60%). Passing grade of 70% required to confer the CPD UK Accredited CAFS™ Credential.",
     leadInstructor: {
       name: "Renjith Kalappurackal (Ren)",
       role: "Dean of ReTRRAC Academy & Former Fortune 500 Banking Leader",
@@ -144,7 +144,7 @@ Crucially, the programme concludes with a mandatory 20-hour Live Forensic Capsto
     },
     features: [
       "Official CPD UK Accredited Certificate with unique verifiable London Registry ID",
-      "60 Verifiable CPD Points recognized by UK professional bodies (SRA, ICAEW, ACCA, CISI)",
+      "60 Verifiable CPD Points recognised by UK professional bodies (SRA, ICAEW, ACCA, CISI)",
       "40 Hours of live interactive lectures led by former HSBC & Deutsche Bank MLROs",
       "20 Hours of hands-on forensic capstone project work on synthetic UK banking data",
       "Lifetime access to ReTRRAC alumni network, regulatory update briefings, and event recordings",
@@ -152,8 +152,8 @@ Crucially, the programme concludes with a mandatory 20-hour Live Forensic Capsto
     ],
     faqs: [
       {
-        q: "Is the CAFS™ qualification recognized internationally?",
-        a: "Yes. The Certified Anti-Financial Crime Specialist (CAFS™) is accredited by the CPD UK Standards Office, which is recognized across the United Kingdom, Europe, the Middle East, India, and globally by major banks, legal bodies, and accounting regulators."
+        q: "Is the CAFS™ qualification recognised internationally?",
+        a: "Yes. The Certified Anti-Financial Crime Specialist (CAFS™) is accredited by the CPD UK Standards Office, which is recognised across the United Kingdom, Europe, the Middle East, India, and globally by major banks, legal bodies, and accounting regulators."
       },
       {
         q: "What payment options are available for UK and international students?",
@@ -165,7 +165,7 @@ Crucially, the programme concludes with a mandatory 20-hour Live Forensic Capsto
       },
       {
         q: "How does the 20-Hour Capstone Project work?",
-        a: "Candidates are provisioned access to our ReTRRAC CLM Sandbox containing synthetic corporate ledgers. You will work individually and in small cohorts to trace illicit fund flows, draft SARs, and submit a defense dossier evaluated by our senior faculty."
+        a: "Candidates are provisioned access to our ReTRRAC CLM Sandbox containing synthetic corporate ledgers. You will work individually and in small cohorts to trace illicit fund flows, draft SARs, and submit a defence dossier evaluated by our senior faculty."
       }
     ]
   },
@@ -179,7 +179,7 @@ Crucially, the programme concludes with a mandatory 20-hour Live Forensic Capsto
     category: "High-Intensity Simulation",
     level: "Intermediate to Senior",
     duration: "30 Hours",
-    breakdown: "20h War Room Investigations + 10h Debrief & Defense Dossier Review",
+    breakdown: "20h War Room Investigations + 10h Debrief & Defence Dossier Review",
     studyMode: "100% Online • Live Interactive War Room Labs",
     priceGBP: 850,
     priceINR: 85000,
@@ -226,7 +226,7 @@ Over 30 rigorous hours, candidates untangle complex offshore corporate webs, tra
       },
       {
         num: 4,
-        title: "Phase 4: Regulatory Defense & Defense Dossier Submission",
+        title: "Phase 4: Regulatory Defence & Defence Dossier Submission",
         duration: "8 Hours",
         description: "Assembling an airtight case file and presenting findings before an expert panel of compliance arbitrators.",
         topics: ["NCA SAR filing drills", "DAML clearance protocols", "Audit trial documentation"]
@@ -238,12 +238,12 @@ Over 30 rigorous hours, candidates untangle complex offshore corporate webs, tra
       { title: "Financial Crime Heads", desc: "Leaders wanting battle-tested scenario training for their teams." }
     ],
     entryRequirements: ["Working knowledge of AML/KYC fundamentals or completion of CAFS™ Module 1-3."],
-    assessmentMethod: "Practical War Room Performance & Final Defense Dossier Evaluation (Pass/Fail with Distinction).",
+    assessmentMethod: "Practical War Room Performance & Final Defence Dossier Evaluation (Pass/Fail with Distinction).",
     leadInstructor: {
       name: "Marcus Vance",
       role: "Senior Forensic Investigator & Former UK Regulatory Advisor",
       credentials: "Former NCA Liaison & Forensic Accounting Specialist",
-      bio: "Marcus has over 18 years of specialized experience in forensic accounting and cross-border financial crime investigations.",
+      bio: "Marcus has over 18 years of specialised experience in forensic accounting and cross-border financial crime investigations.",
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400"
     },
     features: [
@@ -259,7 +259,7 @@ Over 30 rigorous hours, candidates untangle complex offshore corporate webs, tra
       },
       {
         q: "Can corporate compliance teams take Blackthrone™ as a private cohort?",
-        a: "Yes! We regularly deliver dedicated Blackthrone cohorts for banking teams and law firms with customized risk scenarios."
+        a: "Yes! We regularly deliver dedicated Blackthrone cohorts for banking teams and law firms with customised risk scenarios."
       }
     ]
   },
@@ -269,7 +269,7 @@ Over 30 rigorous hours, candidates untangle complex offshore corporate webs, tra
     code: "CLM-PRO",
     title: "Client Lifecycle Management & RegTech Architecture",
     tagline: "Master Modern Digital Onboarding Workflows, IDV Biometrics, Perpetual KYC Triggers & RegTech Systems.",
-    badge: "RegTech Specialization",
+    badge: "RegTech Specialisation",
     category: "Executive Masterclass",
     level: "Professional & Management",
     duration: "25 Hours",
@@ -286,7 +286,7 @@ Over 30 rigorous hours, candidates untangle complex offshore corporate webs, tra
       { id: "clm1", date: "August 01, 2026", schedule: "Weekend Intensive Masterclass", seatsLeft: 12 },
       { id: "clm2", date: "August 22, 2026", schedule: "Executive Evening Cohort", seatsLeft: 15 }
     ],
-    overview: `Client Lifecycle Management (CLM) has become the core infrastructure of modern financial institutions. This 25-hour specialized masterclass trains compliance leaders, product managers, and operations heads to architect and implement state-of-the-art CLM pipelines.
+    overview: `Client Lifecycle Management (CLM) has become the core infrastructure of modern financial institutions. This 25-hour specialised masterclass trains compliance leaders, product managers, and operations heads to architect and implement state-of-the-art CLM pipelines.
 
 Explore digital identity verification (IDV), biometric liveness checks, automated corporate registry parsing across 237 jurisdictions, and event-driven perpetual KYC (pKYC) that replaces obsolete 3-year manual periodic review cycles.`,
     learningOutcomes: [
@@ -358,11 +358,11 @@ Explore digital identity verification (IDV), biometric liveness checks, automate
     code: "FWRA-UK",
     title: "UK MLR 2017 Firm-Wide Risk Assessment (FWRA) Masterclass",
     tagline: "Tailored for Law Firms (SRA), Accountancy Practices (ICAEW), and Estate Agents under HMRC AML Supervision.",
-    badge: "Gatekeeper Specialization",
+    badge: "Gatekeeper Specialisation",
     category: "Professional Practice",
     level: "MLROs, Partners & Compliance Heads",
     duration: "20 Hours",
-    breakdown: "12h Theory & Template Calibration + 8h Audit Defense Workshop",
+    breakdown: "12h Theory & Template Calibration + 8h Audit Defence Workshop",
     studyMode: "100% Online • Interactive Virtual Masterclass",
     priceGBP: 550,
     priceINR: 55000,
@@ -408,7 +408,7 @@ This 20-hour masterclass guides partners, compliance officers, and MLROs step-by
       },
       {
         num: 4,
-        title: "Module 4: Preparing for Regulatory Audits & Inspection Defense",
+        title: "Module 4: Preparing for Regulatory Audits & Inspection Defence",
         duration: "5 Hours",
         description: "Simulated supervisory interviews and file sampling drills with former compliance auditors.",
         topics: ["Supervisory inspection questionnaires", "File audit sampling methods", "Corrective remediation planning"]
@@ -430,7 +430,7 @@ This 20-hour masterclass guides partners, compliance officers, and MLROs step-by
     },
     features: [
       "Customizable FWRA Word & Excel Templates vetted by UK Legal Counsel",
-      "20 CPD UK Accredited points recognized by SRA & ICAEW",
+      "20 CPD UK Accredited points recognised by SRA & ICAEW",
       "Annual AML Staff Training Log template and testing questionnaires",
       "HMRC & SRA Audit Readiness Checklist with instant scoring"
     ],
@@ -446,8 +446,8 @@ This 20-hour masterclass guides partners, compliance officers, and MLROs step-by
     slug: "fintech-crypto-aml",
     code: "CRYPTO-AML",
     title: "FinTech, Crypto & Digital Assets Financial Crime Masterclass",
-    tagline: "Specialized Qualification for Virtual Asset Service Providers (VASPs), Neo-Banks & Payment Service Providers.",
-    badge: "Emerging Tech Specialization",
+    tagline: "Specialised Qualification for Virtual Asset Service Providers (VASPs), Neo-Banks & Payment Service Providers.",
+    badge: "Emerging Tech Specialisation",
     category: "Executive Masterclass",
     level: "Practitioner to Specialist",
     duration: "20 Hours",
@@ -517,7 +517,7 @@ This 20-hour masterclass guides partners, compliance officers, and MLROs step-by
     },
     features: [
       "Access to simulated blockchain explorer and analytics sandboxes",
-      "20 CPD UK Accredited points recognized across Europe and UK",
+      "20 CPD UK Accredited points recognised across Europe and UK",
       "FCA Cryptoasset Registration Readiness Toolkit",
       "Travel Rule compliance operational workflow templates"
     ],
@@ -529,6 +529,13 @@ This 20-hour masterclass guides partners, compliance officers, and MLROs step-by
     ]
   }
 ];
+
+// Courses removed from the website listings (Academy page, menu, "related courses").
+// Their details are kept so old links and past bookings still work.
+// To show one again, just delete its id from this list.
+export const hiddenCourseIds = ['blackthrone-aml', 'clm-regtech', 'crypto-fintech-aml'];
+
+export const listedCourses = coursesCatalog.filter((c) => !hiddenCourseIds.includes(c.id));
 
 export function getCourseById(id) {
   return coursesCatalog.find(c => c.id === id || c.slug === id);

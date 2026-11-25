@@ -109,7 +109,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
             <button
               onClick={() => openAuthModal('admin')}
               className="text-slate-400 hover:text-brand-300 transition-colors flex items-center space-x-1 font-medium"
-              title="Authorized London Deanery Administration Portal"
+              title="Authorised London Deanery Administration Portal"
             >
               <Lock className="w-3 h-3 text-brand-400" />
               <span>Deanery Staff</span>
@@ -236,7 +236,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                 {academyDropdown && (
                   <div className="absolute top-full left-0 w-88 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 mt-1 animate-fadeIn z-50 space-y-2">
                     <div className="p-2 border-b border-slate-100 flex items-center justify-between">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-brand-700">CPD Accredited Programs</p>
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-brand-700">CPD Accredited Programmes</p>
                       <span className="text-[10px] bg-brand-100 text-brand-800 px-2 py-0.5 rounded-full font-bold">PayPal Ready</span>
                     </div>
 
@@ -252,29 +252,7 @@ export default function Navbar({ onOpenRiskScanner, onOpenCopilot }) {
                       <p className="text-[11px] text-slate-500 mt-0.5">40h Live Lectures + 20h Live Forensic Capstone</p>
                     </Link>
 
-                    <Link
-                      to="/retrrac-academy/courses/blackthrone-aml"
-                      onClick={() => setAcademyDropdown(false)}
-                      className="block p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all"
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold text-slate-900">Blackthrone™ Simulation</span>
-                        <span className="text-[10px] text-brand-700 font-bold bg-brand-50 px-2 py-0.5 rounded-full">30h Lab</span>
-                      </div>
-                      <p className="text-[11px] text-slate-500 mt-0.5">Live Scenario Sanctions & SARs War Room</p>
-                    </Link>
 
-                    <Link
-                      to="/retrrac-academy/courses/clm-regtech"
-                      onClick={() => setAcademyDropdown(false)}
-                      className="block p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all"
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold text-slate-900">CLM RegTech Architecture</span>
-                        <span className="text-[10px] text-cyan-700 font-bold bg-cyan-50 px-2 py-0.5 rounded-full">25h Masterclass</span>
-                      </div>
-                      <p className="text-[11px] text-slate-500 mt-0.5">Client Lifecycle Management & IDV Engineering</p>
-                    </Link>
 
                     <Link
                       to="/retrrac-academy/courses/firmwide-risk-assessment"

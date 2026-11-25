@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
 
 /**
  * Light, logo-coloured page banner – the inner-page version of the home hero.
@@ -12,8 +10,7 @@ import { ChevronRight } from 'lucide-react';
  *     highlight="Story"                       // optional: word(s) shown in logo blue
  *     subtitle="Short one-line description"
  *     image="/ourstory.jpg"                   // optional faint background photo
- *     crumb="Our Story"                       // optional breadcrumb label (defaults to title)
- *     parent={{ label: 'Consulting', to: '/compliance-consulting' }} // optional middle breadcrumb
+// (crumb / parent props are still accepted but no longer shown – breadcrumbs were removed site-wide)
  *   />
  */
 export default function PageBanner({ title, highlight, subtitle, image, crumb, parent, children }) {
@@ -40,7 +37,7 @@ export default function PageBanner({ title, highlight, subtitle, image, crumb, p
               src={image}
               alt=""
               aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover opacity-[0.35] grayscale-[35%]"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.18] grayscale-[35%]"
             />
           )}
 
@@ -57,19 +54,6 @@ export default function PageBanner({ title, highlight, subtitle, image, crumb, p
         </div>
 
         <div className="relative z-10 w-full px-6 py-12 md:py-0 text-center max-w-5xl mx-auto space-y-4">
-          {/* Breadcrumb */}
-          <nav className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500">
-            <Link to="/" className="hover:text-brand-700 transition-colors">Home</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            {parent && (
-              <>
-                <Link to={parent.to} className="hover:text-brand-700 transition-colors">{parent.label}</Link>
-                <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-              </>
-            )}
-            <span className="text-accent-600">{crumb || title}</span>
-          </nav>
-
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-ink leading-[1.1]">
             {before}
             {highlight && <span className="text-gradient">{highlight}</span>}

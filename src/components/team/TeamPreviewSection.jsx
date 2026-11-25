@@ -8,7 +8,7 @@ import { teamMembers } from '../../data/teamData';
 // (they still appear on the /team page until their details are filled in).
 const homeTeam = teamMembers.filter((m) => m.name && m.name !== 'Team Member Name');
 
-/** Home page "Our Team" section – small photos running continuously below the heading. */
+/** Home page "Our Team" section – all team members shown side by side (static). */
 export default function TeamPreviewSection() {
   const [selected, setSelected] = useState(null);
 
@@ -21,31 +21,24 @@ export default function TeamPreviewSection() {
           Our Team
         </h2>
 
-        {/* Running row of team photos – pauses on hover, click a photo for the full profile */}
-        <div className="group relative overflow-hidden marquee-fade py-2">
-          <div className="flex w-max animate-marquee-slow group-hover:[animation-play-state:paused]">
-            {[0, 1].map((copy) => (
-              <div key={copy} className="flex shrink-0 gap-6 pr-6" aria-hidden={copy === 1}>
-                {homeTeam.map((m) => (
-                  <button
-                    key={`${copy}-${m.id}`}
-                    type="button"
-                    tabIndex={copy === 1 ? -1 : 0}
-                    onClick={() => setSelected(m)}
-                    className="w-40 sm:w-44 shrink-0 text-left rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-md shadow-slate-900/5 hover:shadow-xl hover:shadow-brand-500/10 hover:border-brand-300 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-                  >
-                    <div className="aspect-[4/5] bg-slate-100 overflow-hidden">
-                      <TeamPhoto member={m} className="w-full h-full hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div className="px-3 py-2.5">
-                      <p className="text-xs font-black text-slate-900 leading-tight line-clamp-2 min-h-[2rem]">{m.name}</p>
-                      <p className="text-[10px] text-brand-700 font-semibold leading-snug mt-0.5 line-clamp-2">{m.role}</p>
-                    </div>
-                  </button>
-                ))}
+        {/* All team members shown together (no scrolling) – click a photo for the full profile */}
+        <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-4 sm:gap-5">
+          {homeTeam.map((m) => (
+            <button
+              key={m.id}
+              type="button"
+              onClick={() => setSelected(m)}
+              className="group w-[calc(50%-0.5rem)] sm:w-40 lg:w-[150px] xl:w-40 shrink-0 text-left rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-md shadow-slate-900/5 hover:shadow-xl hover:shadow-brand-500/10 hover:border-brand-300 hover:-translate-y-1 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+            >
+              <div className="aspect-[4/5] bg-slate-100 overflow-hidden">
+                <TeamPhoto member={m} className="w-full h-full group-hover:scale-105 transition-transform duration-500" />
               </div>
-            ))}
-          </div>
+              <div className="px-3 py-2.5">
+                <p className="text-xs font-black text-slate-900 leading-tight line-clamp-2 min-h-[2rem]">{m.name}</p>
+                <p className="text-[10px] text-brand-700 font-semibold leading-snug mt-0.5 line-clamp-2">{m.role}</p>
+              </div>
+            </button>
+          ))}
         </div>
 
         <div className="mt-12 flex justify-center px-4">

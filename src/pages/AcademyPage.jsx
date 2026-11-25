@@ -22,7 +22,7 @@ import {
 } from 'lucide-react';
 import PageBanner from '../components/common/PageBanner';
 import PayPalCheckoutModal from '../components/payment/PayPalCheckoutModal';
-import { coursesCatalog } from '../data/coursesCatalog';
+import { listedCourses } from '../data/coursesCatalog';
 import { useCurrency } from '../context/CurrencyContext';
 import { useCartWishlist } from '../context/CartWishlistContext';
 import { useAuth } from '../context/AuthContext';
@@ -94,8 +94,9 @@ export default function AcademyPage({ onOpenCopilot }) {
         </div>
 
         {/* Accredited Programs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {coursesCatalog.map((prog) => {
+        {/* Centred grid – adapts to however many courses are listed */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 mx-auto ${listedCourses.length >= 3 ? 'lg:grid-cols-3' : 'max-w-4xl'}`}>
+          {listedCourses.map((prog) => {
             const inCart = isInCart(prog.id);
             const inWish = isInWishlist(prog.id);
 

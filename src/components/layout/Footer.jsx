@@ -59,7 +59,7 @@ export default function Footer({ onOpenRiskScanner }) {
               to="/courses/certified-anti-financial-crime-specialist-cafs"
               className="px-5 py-2.5 rounded-xl bg-gradient-tech text-white font-bold text-xs transition-all shadow-lg shadow-brand-500/20"
             >
-              Enroll in CAFS™ (60h)
+              Enrol in CAFS™ (60h)
             </Link>
           </div>
         </div>
@@ -91,20 +91,20 @@ export default function Footer({ onOpenRiskScanner }) {
               <div className="flex items-start space-x-2.5">
                 <MapPin className="w-4 h-4 text-brand-400 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white">Pune & Kochi Delivery Centers:</strong> Maharashtra & Kerala, India
+                  <strong className="text-white">Pune, Kochi & Chennai Delivery Centres:</strong> Maharashtra, Kerala & Tamil Nadu, India
                 </div>
               </div>
               <div className="flex items-start space-x-2.5">
                 <Phone className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                 <div>
                   <div><strong className="text-white">UK:</strong> +44 7552 237 997 | +44 7380 923 453</div>
-                  <div><strong className="text-white">India:</strong> +91 77099 91797</div>
+                  <div><strong className="text-white">India:</strong> +91 77099 91797 | +91 90432 22911</div>
                 </div>
               </div>
               <div className="flex items-center space-x-2.5">
                 <Mail className="w-4 h-4 text-pink-400 shrink-0" />
                 <a href="mailto:info@retrrac.org" className="hover:text-brand-300 transition-colors">
-                  info@retrrac.org / ren@retrrac.org
+                  info@retrrac.org
                 </a>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function Footer({ onOpenRiskScanner }) {
 
           {/* Col 3: Academy & Programs */}
           <div>
-            <h5 className="text-white font-bold text-sm tracking-wide mb-4">Academy & Programs</h5>
+            <h5 className="text-white font-bold text-sm tracking-wide mb-4">Academy & Programmes</h5>
             <ul className="space-y-2.5 text-xs text-slate-400">
               <li>
                 <Link to="/courses/certified-anti-financial-crime-specialist-cafs" className="hover:text-brand-300 transition-colors font-semibold text-brand-300">
@@ -159,7 +159,7 @@ export default function Footer({ onOpenRiskScanner }) {
               </li>
               <li>
                 <Link to="/retrrac-academy" className="hover:text-brand-300 transition-colors">
-                  ReTRRAC® Academy Catalog
+                  ReTRRAC® Academy Catalogue
                 </Link>
               </li>
               <li>
